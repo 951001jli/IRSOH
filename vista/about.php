@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="team-text">
-                        <h2>Yolijuana</h2>
+                        <h2>Yolibet</h2>
                         <p>Programadora</p>
                     </div>
                 </div>
