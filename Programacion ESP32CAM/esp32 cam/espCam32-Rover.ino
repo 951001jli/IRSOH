@@ -1,5 +1,5 @@
-const char* ssid = "AUTOMATA";
-const char* password = "AUTOMATA";
+const char* ssid = "IRSOH";
+const char* password = "irsoh123";
 
 #include "esp_wifi.h"
 #include "esp_camera.h"

@@ -349,117 +349,190 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>IRSOH ROBOT</title>
+        <title>IRSOH</title>
         <style>
-            *{
-                padding: 0; margin: 0;
-                font-family:monospace;
+            * {
+                padding: 0; 
+                margin: 0;
+                font-family: system-ui, sans-serif;
             }
-        canvas {
-        margin: auto;
-        display: block;
-
-        }
-        .tITULO{
-            text-align: center;
-            color: rgb(97, 97, 97);
-            
-        }
-        .LINK{
-            color: red;
-            width: 60px;
-            margin: auto;
-            display: block;
-            font-size: 14px;
-        }
-        .cont_stream{
-            width: 90%;
-            max-width: 700px;
-
-            border: 1px solid red;
-            margin: auto;
-            display:block;
-        }
-        .cont_flex{
-            margin: 20px auto 20px;
-            width: 70%;
-            max-width: 400px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .cont_flex button{
-            width: 70px;
-            height: 30px;
-            border: none;
-            background-color: red;
-            border-radius: 10px;
-            color: white;
-
-        }
-        .cont_flex button:active{
-            background-color: green;
-        }
-        input[type=range]{-webkit-appearance:none;width:100%;height:22px;background:#cecece;cursor:pointer;margin:0}
-        input[type=range]:focus{outline:0}
-        input[type=range]::-webkit-slider-runnable-track{width:100%;height:2px;cursor:pointer;background:#EFEFEF;border-radius:0;border:0 solid #EFEFEF}
-        input[type=range]::-webkit-slider-thumb{border:1px solid rgba(0,0,30,0);height:22px;width:22px;border-radius:50px;background:#ff3034;cursor:pointer;-webkit-appearance:none;margin-top:-11.5px}
-
+            canvas {
+                margin: auto;
+                display: block;
+            }
+            .tITULO {
+                text-align: center;
+                color: rgb(81, 81, 81);
+            }
+            .LINK {
+                color: red;
+                width: 60px;
+                margin: auto;
+                display: block;
+                font-size: 14px;
+            }
+            .cont_stream {
+                width: 60%;
+                max-width: 700px;
+                border: 2px solid rgb(144, 194, 255);
+                margin: auto;
+                display: block;
+            }
+            .cont_flex {
+                margin: 2px auto 2px;
+                width: 35%;
+                max-width: 130px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .cont_flex button {
+                width: 37px;
+                height: 37px;
+                border: none;
+                background-color: rgb(32, 148, 225);
+                border-radius: 50%;
+                color: white;
+                font-size: 20px;
+            }
+            .cont_flex button:active {
+                background-color: rgb(0, 100, 176);
+            }
+            input[type=range] {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 22px;
+                background: #cecece;
+                cursor: pointer;
+                margin: 0;
+                border-radius: 10px; /* Redondear los bordes */
+            }
+            input[type=range]:focus {
+                outline: 0;
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: #cecece;
+                border-radius: 0;
+                border: 0 solid #EFEFEF;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                border: 1px solid rgba(0, 0, 30, 0);
+                height: 22px;
+                width: 22px;
+                border-radius: 50px;
+                background: rgb(46, 140, 223);
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: -10px;
+            }
+            .control-panel {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4px;
+                background-color: #fff;
+                padding: 8px;
+                border-radius: 20px;
+                box-shadow: 0 4px 8px rgb(173, 173, 173);
+                width: 50%;
+                max-width: 600px;
+                margin: auto;
+            }
+            .control-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #ededed;
+                padding: 9px;
+                border-radius: 20px;
+            }
+            .control-item label {
+                margin-bottom: 3px;
+            }
         </style>
     </head>
     <body>
-         
-        <canvas id="canvas" width="200" height="90"></canvas>
-        <h1 class="tITULO">IRSOH</h1>
-        <a href="https://www.youtube.com/channel/UCKD9PvMAW0nYi681AZbSZSQ/videos" class="LINK">YOUTUBE</a>   
+        <canvas id="canvas" width="200" height="65"></canvas>
+        <h3 class="tITULO">IRSOH</h3>
+       
 
+        <!-- <a href="https://www.youtube.com/channel/UCKD9PvMAW0nYi681AZbSZSQ/videos" class="LINK">YOUTUBE</a>   -->
 
-        <div class="close" id="close-stream" style="margin: auto">close</div>     
+        <div class="close" id="close-stream" style="margin: auto"></div>     
         <img id="stream" src="" class="cont_stream">
+        <br>
+        <div class="cont_flex">     
+            <button type="button" id="get-still">&#x2223;&#x2223;</button>
+            <button type="button" id="toggle-stream">&#x25b6;</button>
+        </div>
+   <br>
+
+        <div class="cont_flex">
+            <div>
+                <input type="checkbox" style="margin-right: 5px;" id="nostop" onclick="var noStop=0;if (this.checked) noStop=1;fetch(document.location.origin+'/control?var=nostop&val='+noStop);">Mantener
+            </div>
+        </div>
+        <!--Direccion motores-->
+        <div class="cont_flex">     
+            <button type="button" id="forward" onclick="fetch(document.location.origin+'/control?var=car&val=1');">&#x2191;
+ 
+            </button>
+        </div>
 
         <div class="cont_flex">     
-            <button type="button" id="get-still">Get still</button>
-            <button type="button" id="toggle-stream">Start Stream</button>
-        </div>
-
-        <div class="cont_flex"><div><input type="checkbox" style="margin-right: 5px;" id="nostop" onclick="var noStop=0;if (this.checked) noStop=1;fetch(document.location.origin+'/control?var=nostop&val='+noStop);">No Stop</div></div>
-
-        <div class="cont_flex">     
-            <button type="button" id="forward" onclick="fetch(document.location.origin+'/control?var=car&val=1');">Forward</button>
-        </div>
-
-        <div class="cont_flex">     
-            <button type="button" id="turnleft" onclick="fetch(document.location.origin+'/control?var=car&val=4');">TurnLeft</button>
-            <button type="button" id="stop" onclick="fetch(document.location.origin+'/control?var=car&val=3');">Stop</button>
-            <button type="button" id="turnright" onclick="fetch(document.location.origin+'/control?var=car&val=2');">TurnRight</button>  
+            <button type="button" id="turnleft" onclick="fetch(document.location.origin+'/control?var=car&val=4');">&#x2190;
+ 
+            </button>
+            <button type="button" id="stop" onclick="fetch(document.location.origin+'/control?var=car&val=3');">&#x1cc3;
+          
+            </button>
+            <button type="button" id="turnright" onclick="fetch(document.location.origin+'/control?var=car&val=2');">&#x2192;
+   
+            </button>  
         </div>
 
         <div class="cont_flex">     
-            <button type="button" id="backward" onclick="fetch(document.location.origin+'/control?var=car&val=5');">Backward</button>
+            <button type="button" id="backward" onclick="fetch(document.location.origin+'/control?var=car&val=5');">&#x2193;
+       
+            </button>
         </div>
 
-        <div class="cont_flex">  
-            <div style="display: flex;align-items: center;">Servo <input type="range" id="servo" min="325" max="650" value="487" onchange="try{fetch(document.location.origin+'/control?var=servo&val='+this.value);}catch(e){}"></div>
-        </div>
-        <div class="cont_flex">  
-            <div style="display: flex;align-items: center;">Speed <input type="range" id="speed" min="0" max="255" value="255" onchange="try{fetch(document.location.origin+'/control?var=speed&val='+this.value);}catch(e){}"></div>
-        </div>
-        <div class="cont_flex">  
-            <div style="display: flex;align-items: center;">Flash <input type="range" id="flash" min="0" max="255" value="0" onchange="try{fetch(document.location.origin+'/control?var=flash&val='+this.value);}catch(e){}"></div>
-        </div>
-        <div class="cont_flex">  
-            <div style="display: flex;align-items: center;">Quali. <input type="range" id="quality" min="10" max="63" value="10" onchange="try{fetch(document.location.origin+'/control?var=quality&val='+this.value);}catch(e){}"></div>
-        </div>
-        <div class="cont_flex">  
-            <div style="display: flex;align-items: center;">Resol. <input type="range" id="framesize" min="0" max="6" value="5" onchange="try{fetch(document.location.origin+'/control?var=framesize&val='+this.value);}catch(e){}"></div>
-        </div>
+ 
+        <!--Cierre direccion-->
 
+        <br>
+
+        <div class="control-panel">  
+            <div class="control-item">
+                <label for="servo">Ángulo</label>
+                <input type="range" id="servo" min="325" max="650" value="487" onchange="try{fetch(document.location.origin+'/control?var=servo&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="speed">Velocidad</label>
+                <input type="range" id="speed" min="0" max="255" value="255" onchange="try{fetch(document.location.origin+'/control?var=speed&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="flash">Flash</label>
+                <input type="range" id="flash" min="0" max="255" value="0" onchange="try{fetch(document.location.origin+'/control?var=flash&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="quality">Calidad</label>
+                <input type="range" id="quality" min="10" max="63" value="10" onchange="try{fetch(document.location.origin+'/control?var=quality&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="framesize">Resolución</label>
+                <input type="range" id="framesize" min="0" max="6" value="5" onchange="try{fetch(document.location.origin+'/control?var=framesize&val='+this.value);}catch(e){}">
+            </div>
+        </div>
         <script>
+            
             window.onload = function(){
                 var canvas = document.getElementById("canvas");
                 var ctx = canvas.getContext("2d");
 
-                ctx.fillStyle = "rgb(255,0,0)";
+                ctx.fillStyle = "rgb(34, 122, 255)";
                 ctx.fillRect(73,25,60,35);
                 ctx.clearRect(78,30,50,25);
 
@@ -474,10 +547,7 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
                 ctx.beginPath();
                 ctx.arc(117,42,6,0,2*Math.PI,true);
                 ctx.fill();
-
-                ctx.beginPath();
-                ctx.arc(104,100,35,0,Math.PI,true);
-                ctx.fill();
+ 
 
                 ctx.clearRect(50,85,100,20);
 
@@ -485,7 +555,7 @@ static const char PROGMEM INDEX_HTML[] = R"rawliteral(
         
             document.addEventListener(
             'DOMContentLoaded',function(){
-                function b(B){let C;switch(B.type){case'checkbox':C=B.checked?1:0;break;case'range':case'select-one':C=B.value;break;case'button':case'submit':C='1';break;default:return;}const D=`${c}/control?var=${B.id}&val=${C}`;fetch(D).then(E=>{console.log(`request to ${D} finished, status: ${E.status}`)})}var c=document.location.origin;const e=B=>{B.classList.add('hidden')},f=B=>{B.classList.remove('hidden')},g=B=>{B.classList.add('disabled'),B.disabled=!0},h=B=>{B.classList.remove('disabled'),B.disabled=!1},i=(B,C,D)=>{D=!(null!=D)||D;let E;'checkbox'===B.type?(E=B.checked,C=!!C,B.checked=C):(E=B.value,B.value=C),D&&E!==C?b(B):!D&&('aec'===B.id?C?e(v):f(v):'agc'===B.id?C?(f(t),e(s)):(e(t),f(s)):'awb_gain'===B.id?C?f(x):e(x):'face_recognize'===B.id&&(C?h(n):g(n)))};document.querySelectorAll('.close').forEach(B=>{B.onclick=()=>{e(B.parentNode)}}),fetch(`${c}/status`).then(function(B){return B.json()}).then(function(B){document.querySelectorAll('.default-action').forEach(C=>{i(C,B[C.id],!1)})});const j=document.getElementById('stream'),k=document.getElementById('stream-container'),l=document.getElementById('get-still'),m=document.getElementById('toggle-stream'),n=document.getElementById('face_enroll'),o=document.getElementById('close-stream'),p=()=>{window.stop(),m.innerHTML='Start Stream'},q=()=>{j.src=`${c+':81'}/stream`,f(k),m.innerHTML='Stop Stream'};l.onclick=()=>{p(),j.src=`${c}/capture?_cb=${Date.now()}`,f(k)},o.onclick=()=>{p(),e(k)},m.onclick=()=>{const B='Stop Stream'===m.innerHTML;B?p():q()},n.onclick=()=>{b(n)},document.querySelectorAll('.default-action').forEach(B=>{B.onchange=()=>b(B)});const r=document.getElementById('agc'),s=document.getElementById('agc_gain-group'),t=document.getElementById('gainceiling-group');r.onchange=()=>{b(r),r.checked?(f(t),e(s)):(e(t),f(s))};const u=document.getElementById('aec'),v=document.getElementById('aec_value-group');u.onchange=()=>{b(u),u.checked?e(v):f(v)};const w=document.getElementById('awb_gain'),x=document.getElementById('wb_mode-group');w.onchange=()=>{b(w),w.checked?f(x):e(x)};const y=document.getElementById('face_detect'),z=document.getElementById('face_recognize'),A=document.getElementById('framesize');A.onchange=()=>{b(A),5<A.value&&(i(y,!1),i(z,!1))},y.onchange=()=>{return 5<A.value?(alert('Please select CIF or lower resolution before enabling this feature!'),void i(y,!1)):void(b(y),!y.checked&&(g(n),i(z,!1)))},z.onchange=()=>{return 5<A.value?(alert('Please select CIF or lower resolution before enabling this feature!'),void i(z,!1)):void(b(z),z.checked?(h(n),i(y,!0)):g(n))}});
+                function b(B){let C;switch(B.type){case'checkbox':C=B.checked?1:0;break;case'range':case'select-one':C=B.value;break;case'button':case'submit':C='1';break;default:return;}const D=`${c}/control?var=${B.id}&val=${C}`;fetch(D).then(E=>{console.log(`request to ${D} finished, status: ${E.status}`)})}var c=document.location.origin;const e=B=>{B.classList.add('hidden')},f=B=>{B.classList.remove('hidden')},g=B=>{B.classList.add('disabled'),B.disabled=!0},h=B=>{B.classList.remove('disabled'),B.disabled=!1},i=(B,C,D)=>{D=!(null!=D)||D;let E;'checkbox'===B.type?(E=B.checked,C=!!C,B.checked=C):(E=B.value,B.value=C),D&&E!==C?b(B):!D&&('aec'===B.id?C?e(v):f(v):'agc'===B.id?C?(f(t),e(s)):(e(t),f(s)):'awb_gain'===B.id?C?f(x):e(x):'face_recognize'===B.id&&(C?h(n):g(n)))};document.querySelectorAll('.close').forEach(B=>{B.onclick=()=>{e(B.parentNode)}}),fetch(`${c}/status`).then(function(B){return B.json()}).then(function(B){document.querySelectorAll('.default-action').forEach(C=>{i(C,B[C.id],!1)})});const j=document.getElementById('stream'),k=document.getElementById('stream-container'),l=document.getElementById('get-still'),m=document.getElementById('toggle-stream'),n=document.getElementById('face_enroll'),o=document.getElementById('close-stream'),p=()=>{window.stop(),m.innerHTML='&#x25b6;'},q=()=>{j.src=`${c+':81'}/stream`,f(k),m.innerHTML='&#x2223;&#x2223;'};l.onclick=()=>{p(),j.src=`${c}/capture?_cb=${Date.now()}`,f(k)},o.onclick=()=>{p(),e(k)},m.onclick=()=>{const B='Stop Stream'===m.innerHTML;B?p():q()},n.onclick=()=>{b(n)},document.querySelectorAll('.default-action').forEach(B=>{B.onchange=()=>b(B)});const r=document.getElementById('agc'),s=document.getElementById('agc_gain-group'),t=document.getElementById('gainceiling-group');r.onchange=()=>{b(r),r.checked?(f(t),e(s)):(e(t),f(s))};const u=document.getElementById('aec'),v=document.getElementById('aec_value-group');u.onchange=()=>{b(u),u.checked?e(v):f(v)};const w=document.getElementById('awb_gain'),x=document.getElementById('wb_mode-group');w.onchange=()=>{b(w),w.checked?f(x):e(x)};const y=document.getElementById('face_detect'),z=document.getElementById('face_recognize'),A=document.getElementById('framesize');A.onchange=()=>{b(A),5<A.value&&(i(y,!1),i(z,!1))},y.onchange=()=>{return 5<A.value?(alert('Please select CIF or lower resolution before enabling this feature!'),void i(y,!1)):void(b(y),!y.checked&&(g(n),i(z,!1)))},z.onchange=()=>{return 5<A.value?(alert('Please select CIF or lower resolution before enabling this feature!'),void i(z,!1)):void(b(z),z.checked?(h(n),i(y,!0)):g(n))}});
         
         </script>
     </body>
