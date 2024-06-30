@@ -35,7 +35,7 @@ if(isset($_SESSION['usuario'])){
                     <div class="caja__trasera-register">
                         <h3>¿Aún no tienes una cuenta?</h3>
                         <p>Regístrate para que puedas iniciar sesión</p>
-                        <button id="btn__registrarse">Regístrarse</button>
+                        <button id="btn__registrarse">Regístrate</button>
                     </div>
                 </div>
 
@@ -51,9 +51,9 @@ if(isset($_SESSION['usuario'])){
 
                     <!--Register-->
                     <form action="php/registro_usuario_be.php" method = "POST" class="formulario__register">
-                        <h2>Regístrarse</h2>
+                        <h2>Regístrate</h2>
                         <input type="text" placeholder="Nombre completo" name="nombre_completo">
-                        <input type="text" placeholder="Correo Electronico" name="correo">
+                        <input type="text" placeholder="Correo electrónico" name="correo">
                         <input type="text" placeholder="Usuario" name="usuario">
                         <input type="password" placeholder="Contraseña" name="contrasena">
                         <button>Regístrarse</button>

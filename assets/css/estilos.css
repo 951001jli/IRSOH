@@ -12,6 +12,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    
 }
 
 main{
@@ -26,6 +27,7 @@ main{
     max-width: 800px;
     margin: auto;
     position: relative;
+    
 }
 
 .caja__trasera{
@@ -36,6 +38,7 @@ main{
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(0, 128, 255, 0.5);
+    border-radius:20px;
 
 }
 
@@ -43,12 +46,14 @@ main{
     margin: 100px 40px;
     color: white;
     transition: all 500ms;
+    
 }
 
 
 .caja__trasera div p,
 .caja__trasera button{
     margin-top: 30px;
+    border-radius:20px;
 }
 
 .caja__trasera div h3{
@@ -71,11 +76,13 @@ main{
     color: white;
     outline: none;
     transition: all 300ms;
+    
 }
 
 .caja__trasera button:hover{
     background: #fff;
     color: #46A2FD;
+    
 }
 
 /*Formularios*/
@@ -98,7 +105,8 @@ main{
     padding: 80px 20px;
     background: white;
     position: absolute;
-    border-radius: 20px;
+    border-radius:20px;
+    
 }
 
 .contenedor__login-register form h2{
@@ -106,6 +114,7 @@ main{
     text-align: center;
     margin-bottom: 20px;
     color: #46A2FD;
+    
 }
 
 .contenedor__login-register form input{
@@ -116,6 +125,7 @@ main{
     background: #F2F2F2;
     font-size: 16px;
     outline: none;
+    border-radius:20px;
 }
 
 .contenedor__login-register form button{
@@ -128,6 +138,7 @@ main{
     cursor: pointer;
     color: white;
     outline: none;
+    border-radius:20px;
 }
 
 
