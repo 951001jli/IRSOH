@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>IRSOH</title>
+        <style>
+            * {
+                padding: 0; 
+                margin: 0;
+                font-family: system-ui, sans-serif;
+                
+            }
+            canvas {
+                margin: auto;
+                display: block;
+            }
+            .tITULO {
+                text-align: center;
+                color: rgb(81, 81, 81);
+            }
+            .LINK {
+                color: red;
+                width: 60px;
+                margin: auto;
+                display: block;
+                font-size: 14px;
+            }
+            .cont_stream {
+                width: 60%;
+                max-width: 700px;
+                border: 2px solid rgb(144, 194, 255);
+                margin: auto;
+                display: block;
+            }
+            .cont_flex {
+                margin: 2px auto 2px;
+                width: 35%;
+                max-width: 130px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .cont_flex button {
+                width: 37px;
+                height: 37px;
+                border: none;
+                background-color: rgb(32, 148, 225);
+                border-radius: 50%;
+                color: white;
+                font-size: 20px;
+            }
+            .cont_flex button:active {
+                background-color: rgb(0, 100, 176);
+            }
+            input[type=range] {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 22px;
+                background: #cecece;
+                cursor: pointer;
+                margin: 0;
+                border-radius: 10px; /* Redondear los bordes */
+            }
+            input[type=range]:focus {
+                outline: 0;
+            }
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 2px;
+                cursor: pointer;
+                background: #cecece;
+                border-radius: 0;
+                border: 0 solid #EFEFEF;
+            }
+            input[type=range]::-webkit-slider-thumb {
+                border: 1px solid rgba(0, 0, 30, 0);
+                height: 22px;
+                width: 22px;
+                border-radius: 50px;
+                background: rgb(46, 140, 223);
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: -10px;
+            }
+            .control-panel {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4px;
+                background-color: #fff;
+                padding: 8px;
+                border-radius: 20px;
+                box-shadow: 0 4px 8px rgb(173, 173, 173);
+                width: 50%;
+                max-width: 600px;
+                margin: auto;
+            }
+            .control-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: #ededed;
+                padding: 9px;
+                border-radius: 20px;
+            }
+            .control-item label {
+                margin-bottom: 3px;
+            }
+
+            body {
+            background-color: #ececec; /* Color gris claro */
+        }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <canvas id="canvas" width="200" height="65"></canvas>
+        <h3 class="tITULO">IRSOH</h3>
+       
+
+      
+
+        <div class="close" id="close-stream" style="margin: auto"></div>     
+        <img id="stream" src="" class="cont_stream">
+        <br>
+        <div class="cont_flex">     
+            <button type="button" id="get-still">&#x2223;&#x2223;</button>
+            <button type="button" id="toggle-stream">&#x25b6;</button>
+        </div>
+   <br>
+
+        <div class="cont_flex">
+            <div>
+                <input type="checkbox" style="margin-right: 5px;" id="nostop" onclick="var noStop=0;if (this.checked) noStop=1;fetch(document.location.origin+'/control?var=nostop&val='+noStop);">Mantener
+            </div>
+        </div>
+
+        <!--Direccion motores-->
+        <div class="cont_flex">     
+            <button type="button" id="forward" onclick="fetch(document.location.origin+'/control?var=car&val=1');">&#x2191;
+ 
+            </button>
+        </div>
+
+        <div class="cont_flex">     
+            <button type="button" id="turnleft" onclick="fetch(document.location.origin+'/control?var=car&val=4');">&#x2190;
+ 
+            </button>
+            <button type="button" id="stop" onclick="fetch(document.location.origin+'/control?var=car&val=3');">O
+          
+            </button>
+            <button type="button" id="turnright" onclick="fetch(document.location.origin+'/control?var=car&val=2');">&#x2192;
+   
+            </button>  
+        </div>
+
+        <div class="cont_flex">     
+            <button type="button" id="backward" onclick="fetch(document.location.origin+'/control?var=car&val=5');">&#x2193;
+       
+            </button>
+        </div>
+
+ 
+        <!--Cierre direccion-->
+
+        <br>
+
+        <div class="control-panel">  
+            <div class="control-item">
+                <label for="servo">Ángulo</label>
+                <input type="range" id="servo" min="325" max="650" value="487" onchange="try{fetch(document.location.origin+'/control?var=servo&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="speed">Velocidad</label>
+                <input type="range" id="speed" min="0" max="255" value="255" onchange="try{fetch(document.location.origin+'/control?var=speed&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="flash">Flash</label>
+                <input type="range" id="flash" min="0" max="255" value="0" onchange="try{fetch(document.location.origin+'/control?var=flash&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="quality">Calidad</label>
+                <input type="range" id="quality" min="10" max="63" value="10" onchange="try{fetch(document.location.origin+'/control?var=quality&val='+this.value);}catch(e){}">
+            </div>
+            <div class="control-item">
+                <label for="framesize">Resolución</label>
+                <input type="range" id="framesize" min="0" max="6" value="5" onchange="try{fetch(document.location.origin+'/control?var=framesize&val='+this.value);}catch(e){}">
+            </div>
+        </div>
+    <br>    <br>
+
+
+        
+
+
+
+
+    <script>
+        window.onload = function(){
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+
+            ctx.fillStyle = "rgb(34, 122, 255)";
+            ctx.fillRect(73,25,60,35);
+            ctx.clearRect(78,30,50,25);
+
+            ctx.fillRect(93,20,20,5);
+            ctx.fillRect(68,35,5,15);
+            ctx.fillRect(133,35,5,15);
+
+            ctx.beginPath();
+            ctx.arc(92,42,6,0,2*Math.PI,true);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(117,42,6,0,2*Math.PI,true);
+            ctx.fill();
+
+            ctx.clearRect(50,85,100,20);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            function sendControlRequest(element) {
+                let value;
+                switch (element.type) {
+                    case 'checkbox':
+                        value = element.checked ? 1 : 0;
+                        break;
+                    case 'range':
+                    case 'select-one':
+                        value = element.value;
+                        break;
+                    case 'button':
+                    case 'submit':
+                        value = '1';
+                        break;
+                    default:
+                        return;
+                }
+                const url = `${baseUrl}/control?var=${element.id}&val=${value}`;
+                fetch(url).then(response => {
+                    console.log(`Request to ${url} finished, status: ${response.status}`);
+                });
+            }
+            
+            const baseUrl = document.location.origin;
+
+            const hideElement = (element) => element.classList.add('hidden');
+            const showElement = (element) => element.classList.remove('hidden');
+            const disableElement = (element) => {
+                element.classList.add('disabled');
+                element.disabled = true;
+            };
+            const enableElement = (element) => {
+                element.classList.remove('disabled');
+                element.disabled = false;
+            };
+            const updateElement = (element, value, shouldSendRequest = true) => {
+                let currentValue;
+                if (element.type === 'checkbox') {
+                    currentValue = element.checked;
+                    value = !!value;
+                    element.checked = value;
+                } else {
+                    currentValue = element.value;
+                    element.value = value;
+                }
+
+                if (shouldSendRequest && currentValue !== value) {
+                    sendControlRequest(element);
+                } else {
+                    if (element.id === 'aec') {
+                        value ? hideElement(aecValueGroup) : showElement(aecValueGroup);
+                    } else if (element.id === 'agc') {
+                        value ? (showElement(agcGainGroup), hideElement(gainCeilingGroup)) : (hideElement(agcGainGroup), showElement(gainCeilingGroup));
+                    } else if (element.id === 'awb_gain') {
+                        value ? showElement(wbModeGroup) : hideElement(wbModeGroup);
+                    } else if (element.id === 'face_recognize') {
+                        value ? enableElement(faceEnrollButton) : disableElement(faceEnrollButton);
+                    }
+                }
+            };
+
+            document.querySelectorAll('.close').forEach(button => {
+                button.onclick = () => {
+                    hideElement(button.parentNode);
+                };
+            });
+
+            fetch(`${baseUrl}/status`).then(response => response.json()).then(data => {
+                document.querySelectorAll('.default-action').forEach(element => {
+                    updateElement(element, data[element.id], false);
+                });
+            });
+
+            const stream = document.getElementById('stream');
+            const streamContainer = document.getElementById('stream-container');
+            const getStillButton = document.getElementById('get-still');
+            const toggleStreamButton = document.getElementById('toggle-stream');
+            const faceEnrollButton = document.getElementById('face_enroll');
+            const closeStreamButton = document.getElementById('close-stream');
+
+            const stopStream = () => {
+                window.stop();
+                toggleStreamButton.innerHTML = '&#x25b6;';
+            };
+
+            const startStream = () => {
+                stream.src = `${baseUrl}:81/stream`;
+                showElement(streamContainer);
+                toggleStreamButton.innerHTML = '&#x2223;&#x2223;';
+            };
+
+            getStillButton.onclick = () => {
+                const imgURL = `${baseUrl}/capture?_cb=${Date.now()}`;
+                const link = document.createElement('a');
+                link.href = imgURL;
+                link.download = 'capture.jpg';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+
+            closeStreamButton.onclick = () => {
+                stopStream();
+                hideElement(streamContainer);
+            };
+
+            toggleStreamButton.onclick = () => {
+                if (toggleStreamButton.innerHTML === 'Stop Stream') {
+                    stopStream();
+                } else {
+                    startStream();
+                }
+            };
+
+            faceEnrollButton.onclick = () => {
+                sendControlRequest(faceEnrollButton);
+            };
+
+            document.querySelectorAll('.default-action').forEach(element => {
+                element.onchange = () => sendControlRequest(element);
+            });
+
+            const agcCheckbox = document.getElementById('agc');
+            const agcGainGroup = document.getElementById('agc_gain-group');
+            const gainCeilingGroup = document.getElementById('gainceiling-group');
+            agcCheckbox.onchange = () => {
+                sendControlRequest(agcCheckbox);
+                agcCheckbox.checked ? (showElement(gainCeilingGroup), hideElement(agcGainGroup)) : (hideElement(gainCeilingGroup), showElement(agcGainGroup));
+            };
+
+            const aecCheckbox = document.getElementById('aec');
+            const aecValueGroup = document.getElementById('aec_value-group');
+            aecCheckbox.onchange = () => {
+                sendControlRequest(aecCheckbox);
+                aecCheckbox.checked ? hideElement(aecValueGroup) : showElement(aecValueGroup);
+            };
+
+            const awbGainCheckbox = document.getElementById('awb_gain');
+            const wbModeGroup = document.getElementById('wb_mode-group');
+            awbGainCheckbox.onchange = () => {
+                sendControlRequest(awbGainCheckbox);
+                awbGainCheckbox.checked ? showElement(wbModeGroup) : hideElement(wbModeGroup);
+            };
+
+            const faceDetectCheckbox = document.getElementById('face_detect');
+            const faceRecognizeCheckbox = document.getElementById('face_recognize');
+            const frameSizeSelect = document.getElementById('framesize');
+            frameSizeSelect.onchange = () => {
+                sendControlRequest(frameSizeSelect);
+                if (frameSizeSelect.value > 5) {
+                    updateElement(faceDetectCheckbox, false);
+                    updateElement(faceRecognizeCheckbox, false);
+                }
+            };
+
+            faceDetectCheckbox.onchange = () => {
+                if (frameSizeSelect.value > 5) {
+                    updateElement(faceDetectCheckbox, false);
+                } else {
+                    updateElement(faceRecognizeCheckbox, faceDetectCheckbox.checked);
+                }
+            };
+
+            faceRecognizeCheckbox.onchange = () => {
+                if (frameSizeSelect.value > 5) {
+                    updateElement(faceRecognizeCheckbox, false);
+                } else {
+                    updateElement(faceRecognizeCheckbox, faceDetectCheckbox.checked);
+                }
+            };
+        });
+    </script>
+</body>
+</html>
