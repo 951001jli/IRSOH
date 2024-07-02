@@ -34,7 +34,7 @@ CREATE TABLE `bitacora` (
   `bit_fecha` datetime(6) NOT NULL COMMENT 'Fecha del acontesimiento',
   `bit_tiempo` time(6) NOT NULL COMMENT 'Tiempo de duracion',
   `bit_lugar` varchar(150) NOT NULL COMMENT 'Lugar del aconteciomiento'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `comentario` (
   `com_id` int NOT NULL COMMENT 'id comentario',
   `com_correo` varchar(50) NOT NULL COMMENT 'correo del usuario',
   `com_asunto` varchar(150) NOT NULL COMMENT 'comentario del suceso'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `usuarios` (
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'correo electronico del usuario\r\n',
   `usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'usuario determinado por el mismo usuario',
   `contrasena` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT 'contrasena determinada por el usuario'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Índices para tablas volcadas

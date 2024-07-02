@@ -1,10 +1,11 @@
         <!-- Carousel Start -->
-        <div class="carousel">
+      
+        <div class="carousel" style="margin: 0; padding:0; " >
             <div class="container-fluid">
                 <div class="owl-carousel">
                     <div class="carousel-item">
-                        <div class="carousel-img">
-                            <img src="vista/recursos/img/sismo3.jpg" alt="Image">
+                        <div class="carousel-img" >
+                            <img src="vista/recursos/img/sismo3.jpg" alt="Image" >
                         </div>
                         <div class="carousel-text">
                             <h1>Salva <span>más</span> vidas</h1>
@@ -151,7 +152,7 @@
         
 
 
-
+        </div>
 
         
         

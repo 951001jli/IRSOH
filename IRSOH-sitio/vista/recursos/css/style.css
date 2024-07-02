@@ -1,11 +1,15 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+
+
 body {
     color: #757575;
     background: #ffffff;
     font-family: 'open sans', sans-serif;
+    
 }
+
 
 h1,
 h2, 
@@ -244,6 +248,9 @@ a:focus {
     height: 100%;
     text-align: right;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .carousel .carousel-img::after {
