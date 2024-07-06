@@ -12,6 +12,7 @@ class Pages {
             'contact'  => 'vista/contact.php',
             'sesion'     => 'vista/inicioSesion.php',
             'default'  => 'vista/inicio.php',  
+            'contrato'  => 'vista/contratanos.php' 
         ];
  
         echo include $vistas[$page] ?? $vistas['default'];

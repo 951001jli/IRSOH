@@ -12,7 +12,7 @@ $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE
 
 if(mysqli_num_rows($validar_login) > 0){ 
     $_SESSION['usuario'] = $correo;
-    header ("location: ../ESP32CAM/esp32cam/pagina.html");
+    header ("location: ../administrador.html");
     exit;
 }else{ 
     echo ' 
