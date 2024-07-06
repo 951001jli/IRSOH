@@ -20,7 +20,7 @@
         <link href="vista/recursos/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="vista/recursos/lib/flaticon/font/flaticon.css" rel="stylesheet">
         <link href="vista/recursos/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <!-- Template Stylesheet -->
         <link href="vista/recursos/css/style.css" rel="stylesheet">
     </head>

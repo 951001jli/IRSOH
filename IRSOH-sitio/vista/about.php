@@ -1,4 +1,22 @@
-        <!-- Page Header Start -->
+<style>
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-header h2 {
+            animation: slideInUp 1s ease-out;
+        }
+    </style>
+
+       
+       <!-- Page Header Start -->
         <div class="page-header mb-0">
             <div class="container">
                 <div class="row">
@@ -56,40 +74,71 @@
         </div>
         <!-- Food End -->
         
+ 
+    <style>
+        /* Añade esto a tu archivo CSS */
+        @keyframes slide-up {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-        <!-- About Start -->
-        <div class="about">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="vista/recursos/img/equipo.jpg" alt="Image">
-                           
-                        </div>
+        .about-content.scrolled-up {
+            animation: slide-up 1s forwards;
+        }
+    </style>
+ 
+    <!-- About Start -->
+    <div class="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-img">
+                        <img src="vista/recursos/img/equipo.jpg" alt="Image">
                     </div>
-
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-header">
-                                <p>Sobre nosotros</p>
-                                <h2>Innovación y compromiso</h2>
-                            </div>
-                            <div class="about-text">
-                                <p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <p>Sobre nosotros</p>
+                            <h2>Innovación y compromiso</h2>
+                        </div>
+                        <div class="about-text">
+                            <p>
                                 Nuestra empresa se dedica a la creación y desarrollo de robots equipados con cámaras, diseñados específicamente para la búsqueda y rescate de personas en escombros o lugares de difícil acceso.
-                                </p>
-                                <p>
+                            </p>
+                            <p>
                                 Comprometidos con la seguridad y la excelencia, nuestro equipo de ingenieros y desarrolladores trabaja constantemente en la mejora y evolución de nuestros productos. Creemos en la importancia de la colaboración con los profesionales de rescate y las organizaciones de emergencia para adaptar nuestras soluciones a sus necesidades específicas.
-                                </p>
-                                
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- About End -->
-        
+    </div>
+    <!-- About End -->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const aboutContent = document.querySelector('.about-content');
+
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const aboutPosition = aboutContent.getBoundingClientRect().top + window.scrollY;
+
+            if (scrollPosition > aboutPosition) {
+                aboutContent.classList.add('scrolled-up');
+            }
+        });
+    });
+    </script>
+ 
+
  
 
         <!-- Team Start -->
@@ -117,22 +166,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="team-item">
-                    <div class="team-img">
-                        <img src="vista/recursos/img/perfil-img.jpg" alt="Image">
-                        <div class="team-social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a> 
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-text">
-                        <h2>Joseph</h2>
-                        <p>Programador</p>
-                    </div>
-                </div>
-            </div>
+ 
             <div class="col-md-2">
                 <div class="team-item">
                     <div class="team-img">

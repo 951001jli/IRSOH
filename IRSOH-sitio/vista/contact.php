@@ -1,5 +1,23 @@
+<style>
+        @keyframes slideInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-        <!-- Page Header Start -->
+        .page-header h2 {
+            animation: slideInUp 1s ease-out;
+        }
+    </style>
+
+    
+    
+    <!-- Page Header Start -->
         <div class="page-header">
             <div class="container">
                 <div class="row">
