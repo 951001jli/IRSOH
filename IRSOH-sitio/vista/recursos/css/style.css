@@ -7,7 +7,6 @@ body {
     color: #757575;
     background: #ffffff;
     font-family: 'open sans', sans-serif;
-    
 }
 
 
@@ -2161,33 +2160,4 @@ main{
     }
 }
 
-
-/* Boton contratanos  */
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-.carousel .carousel-text .btn-contratanos {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background-color: #4e94ea; /* Color azul */
-    color: #ffffff; /* Color del texto */
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    text-decoration: none;
-    animation: heartbeat 1.5s infinite;
-}
-
-.carousel .carousel-text .btn-contratanos:hover {
-    background-color: #0056b3; /* Color azul más oscuro al pasar el ratón */
-}
-
+ 

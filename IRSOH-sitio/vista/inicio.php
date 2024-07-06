@@ -36,7 +36,46 @@
                         <p>
                             Un rayo de esperanza en medio del caos, buscando incansablemente en los escombros para salvar vidas.
                         </p>
-                        <button class="btn-contratanos">Contrátanos</button>
+                        <style>
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+        }
+        70% {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+        }
+    }
+
+    .btn-contratanos {
+        padding: 10px 20px;
+        background-color: #007bff; /* Color azul */
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 25px;
+        animation: pulse 1.5s infinite;
+        transition: transform 0.2s, box-shadow 0.2s;
+        text-align: center; /* Centrar el texto dentro del botón */
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+    .btn-contratanos:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0.2);
+    }
+</style>
+
+<a href="../vista/inicioSesion.php" class="btn-contratanos">Contrátanos</a>
+
                     </div>
                 </div>
             </div>
