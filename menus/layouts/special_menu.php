@@ -5,24 +5,19 @@
       <span>Panel de control</span>
     </a>
   </li>
-  <li>
-    <a href="categorie.php" >
-      <i class="glyphicon glyphicon-indent-left"></i>
-      <span>Categorías</span>
-    </a>
-  </li>
+ 
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
       <span>Productos</span>
     </a>
     <ul class="nav submenu">
-       <li><a href="product.php">Administrar productos</a> </li>
-       <li><a href="add_product.php">Agregar producto</a> </li>
+       <li><a href="productUsuario.php">Administrar solicitudes</a> </li>
+       <li><a href="add_product.php">Agregar solicitud</a> </li>
    </ul>
   </li>
   <li>
-    <a href="media.php" >
+    <a href="mediaUsuario.php" >
       <i class="glyphicon glyphicon-picture"></i>
       <span>Media</span>
     </a>
