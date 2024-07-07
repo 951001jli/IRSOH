@@ -122,7 +122,7 @@
                             Quiero el servicio
                         </a>
                         
-                                        <a href="login.php" class="nav-item nav-link">Iniciar sesión</a>
+                                        <a href="/irsoh/menus/index.php" class="nav-item nav-link">Iniciar sesión</a>
                                     </div>
                                 </div>
                             </div>
@@ -332,7 +332,7 @@
             </p>
 
             <!-- Botón palpitante -->
-            <a href="login.php" class="pulse-button">¡Lo quiero!</a>
+            <a href="/irsoh/menus/index.php" class="pulse-button">¡Lo quiero!</a>
         </div>
     </div>
 </div>
@@ -363,7 +363,7 @@
                 <strong>Precio:</strong> $6000 por día / $15,000 por semana.
             </p>
              <!-- Botón palpitante -->
-             <a href="login.php" class="pulse-button">¡Lo quiero!</a>
+             <a href="/irsoh/menus/index.php" class="pulse-button">¡Lo quiero!</a>
         </div>
     </div>
 </div>
@@ -393,7 +393,7 @@
                 <strong>Precio:</strong> $10,000 por día / $20,000 por semana.
             </p>
              <!-- Botón palpitante -->
-             <a href="login.php" class="pulse-button">¡Lo quiero!</a>
+             <a href="/irsoh/menus/index.php" class="pulse-button">¡Lo quiero!</a>
         </div>
     </div>
 </div>

@@ -21,8 +21,8 @@ $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo
 if(mysqli_num_rows($verificar_correo) > 0){
 echo '
   <script>
-  alert("Usuario ya existe, intenta uno diferente");
-  window.location = "../login.php";
+  alert("Este correo ya existe, intenta uno diferente");
+  window.location = "../index.php";
   </script>
 ';
 exit();
@@ -36,7 +36,7 @@ if(mysqli_num_rows($verificar_usuario) > 0){
 echo '
   <script>
   alert("Este usuario ya existe, intenta uno diferente");
-  window.location = "../login.php";
+  window.location = "../index.php";
   </script>
 ';
 exit();
@@ -48,12 +48,12 @@ $ejecutar = mysqli_query($conexion, $query);
 if($ejecutar){
     echo '<script> 
     alert(" Registro excitoso "); 
-    window.location = "../login.php";
+    window.location = "../index.php";
     </script>';
 }else{
     echo '<script> 
     alert("Intentalo de nuevo, usuario no registrado"); 
-    window.location = "../login.php";
+    window.location = "../index.php";
     </script>';
 }
 mysqli_close($conexion);
