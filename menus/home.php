@@ -4,17 +4,17 @@
   if (!$session->isUserLoggedIn(true)) { redirect('index.php', false);}
 ?>
 <?php include_once('layouts/header.php'); ?>
-<div class="row">
-  <div class="col-md-12">
-    <?php echo display_msg($msg); ?>
-  </div>
- <div class="col-md-12">
-    <div class="panel">
-      <div class="jumbotron text-center">
-         <h1>Esta es su nueva página de inicio</h1>
-     
-      </div>
+
+<body>
+
+<section id="hero" class="hero section dark-background">
+    <img src="../menus/libs/images/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>IRSOH</h2>
+        <p>Salvando...<span class="typed" data-typed-items="vidas, animales, familias, historias">vidas!!</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
     </div>
- </div>
-</div>
+</section>
+
+
+</body>
 <?php include_once('layouts/footer.php'); ?>
