@@ -41,7 +41,7 @@ body{
   background-color: #FDD761;
 }
 .bg-red{
-  background-color: #FF7857;
+  background-color: #517688;
 }
 .panel-default >.panel-heading{
   background-color: #f5f5f5;
@@ -97,7 +97,7 @@ body{
     letter-spacing: 1px;
     display: inline-block;
     width: 250px;
-     background-color: #16a085;
+     background-color: #5F9ED4;
 }.header-date{
   color: #9b9b9b;
   margin-left: 20px;
@@ -304,3 +304,37 @@ input[type=file]{
   width: 125px;
   height: 125px;
 }
+
+#hero {
+  position: relative;
+  height: 100vh; /* Hace que la sección ocupe el 100% del viewport height */
+  overflow: hidden; /* Para que la imagen no desborde la sección */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #3333335b; /* Color de fondo de respaldo */
+}
+
+#hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+.container {
+  z-index: 1; /* Coloca el contenido encima de la imagen */
+  color: white; /* Color del texto */
+}
+
+h2 {
+  font-size: 3em; /* Tamaño de la fuente del título */
+}
+
+p {
+  font-size: 1.5em; /* Tamaño de la fuente del párrafo */
+}
+
