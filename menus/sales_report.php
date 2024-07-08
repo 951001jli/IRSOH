@@ -21,9 +21,9 @@ $page_title = 'Reporte de ventas';
             <div class="form-group">
               <label class="form-label">Rango de fechas</label>
                 <div class="input-group">
-                  <input type="text" class="datepicker form-control" name="start-date" placeholder="From">
+                  <input type="text" class="datepicker form-control" name="start-date" placeholder="De">
                   <span class="input-group-addon"><i class="glyphicon glyphicon-menu-right"></i></span>
-                  <input type="text" class="datepicker form-control" name="end-date" placeholder="To">
+                  <input type="text" class="datepicker form-control" name="end-date" placeholder="a">
                 </div>
             </div>
             <div class="form-group">

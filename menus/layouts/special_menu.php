@@ -2,7 +2,7 @@
   <li>
     <a href="home.php">
       <i class="glyphicon glyphicon-home"></i>
-      <span>Panel de control</span>
+      <span>Panel de Control</span>
     </a>
   </li>
  
@@ -12,8 +12,8 @@
       <span>Productos</span>
     </a>
     <ul class="nav submenu">
-       <li><a href="productUsuario.php">Administrar solicitudes</a> </li>
-       <li><a href="add_product.php">Agregar solicitud</a> </li>
+       <li><a href="productUsuario.php">Administrar Solicitudes</a> </li>
+       <li><a href="add_product.php">Agregar Solicitud</a> </li>
    </ul>
   </li>
   <li>

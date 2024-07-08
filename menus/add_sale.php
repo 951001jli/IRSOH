@@ -68,7 +68,7 @@
         <form method="post" action="add_sale.php">
          <table class="table table-bordered">
            <thead>
-            <th> Producto </th>
+            <th> Servicio </th>
             <th> Precio </th>
             <th> Cantidad </th>
             <th> Total </th>

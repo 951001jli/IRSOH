@@ -56,7 +56,7 @@
         <div class="panel-heading">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
-            <span>Agregar producto</span>
+            <span>Agregar Servicio</span>
          </strong>
         </div>
         <div class="panel-body">
@@ -123,7 +123,7 @@
                   </div>
                </div>
               </div>
-              <button type="submit" name="add_product" class="btn btn-danger">Agregar producto</button>
+              <button type="submit" name="add_product" class="btn btn-danger">Agregar Servicio</button>
           </form>
          </div>
         </div>
