@@ -56,11 +56,7 @@
         <div class="panel-heading">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
-<<<<<<< HEAD
-            <span>Agregar Servicio</span>
-=======
-            <span>Agregar solicitud</span>
->>>>>>> 639c8c156b6ddbb10aef072c1e4647a594d159bb
+            <span>Agregar producto</span>
          </strong>
         </div>
         <div class="panel-body">
@@ -127,11 +123,7 @@
                   </div>
                </div>
               </div>
-<<<<<<< HEAD
-              <button type="submit" name="add_product" class="btn btn-danger">Agregar Servicio</button>
-=======
-              <button type="submit" name="add_product" class="btn btn-danger">Agregar</button>
->>>>>>> 639c8c156b6ddbb10aef072c1e4647a594d159bb
+              <button type="submit" name="add_product" class="btn btn-danger">Agregar producto</button>
           </form>
          </div>
         </div>

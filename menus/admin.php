@@ -20,7 +20,6 @@
      <?php echo display_msg($msg); ?>
    </div>
 </div>
-
   <div class="row">
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
@@ -51,11 +50,10 @@
         </div>
         <div class="panel-value pull-right">
           <h2 class="margin-top"> <?php  echo $c_product['total']; ?> </h2>
-          <p class="text-muted">Servicios</p>
+          <p class="text-muted">Productos</p>
         </div>
        </div>
     </div>
-    <!--
     <div class="col-md-3">
        <div class="panel panel-box clearfix">
          <div class="panel-icon pull-left bg-yellow">
