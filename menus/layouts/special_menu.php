@@ -2,14 +2,14 @@
   <li>
     <a href="home.php">
       <i class="glyphicon glyphicon-home"></i>
-      <span>Panel de Control</span>
+      <span>Panel de control</span>
     </a>
   </li>
  
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
-      <span>Productos</span>
+      <span>Solicitudes</span>
     </a>
     <ul class="nav submenu">
        <li><a href="productUsuario.php">Administrar Solicitudes</a> </li>
@@ -19,7 +19,7 @@
   <li>
     <a href="mediaUsuario.php" >
       <i class="glyphicon glyphicon-picture"></i>
-      <span>Media</span>
+      <span>Galería</span>
     </a>
   </li>
 </ul>

@@ -203,36 +203,90 @@
                 </div>
             </div>
         </div>
-        <div class="row contact-form">
-            <div class="col-md-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240864.1946632267!2d-99.30842710059825!3d19.390659362026867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1718600487162!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            <div class="col-md-6">
-                <div id="success"></div>
-                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="name" placeholder="Nombre" required="required" data-validation-required-message="Ingresa tu nombre" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="email" class="form-control" id="email" placeholder="Email" required="required" data-validation-required-message="Ingresa tu correo" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" class="form-control" id="subject" placeholder="Asunto" required="required" data-validation-required-message="Ingresa un asunto" />
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <textarea class="form-control" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Ingresa un mensaje"></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div>
-                        <button class="btn custom-btn" type="submit" id="sendMessageButton">Enviar mensaje</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+ 
+
+ 
+<?php
+// Verificar si se ha enviado el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Variables de conexión a la base de datos
+    $servername = "localhost";
+    $username = "root"; // Reemplaza con tu usuario de MySQL
+    $password = ""; // Reemplaza con tu contraseña de MySQL
+    $database = "oswa_inv"; // Reemplaza con el nombre de tu base de datos
+
+    // Recoge los datos del formulario
+    $nombre = $_POST['nombre'];
+    $email = $_POST['email'];
+    $asunto = $_POST['asunto'];
+    $mensaje = $_POST['mensaje'];
+
+    // Conexión a la base de datos
+    $conn = new mysqli($servername, $username, $password, $database);
+
+    // Verifica la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+
+    // Escapar caracteres especiales para evitar inyección SQL
+    $nombre = $conn->real_escape_string($nombre);
+    $email = $conn->real_escape_string($email);
+    $asunto = $conn->real_escape_string($asunto);
+    $mensaje = $conn->real_escape_string($mensaje);
+
+    // Prepara la consulta SQL para insertar los datos
+    $sql = "INSERT INTO contactanos (nombre, email, asunto, mensaje) VALUES ('$nombre', '$email', '$asunto', '$mensaje')";
+
+    if ($conn->query($sql) === TRUE) {
+        $mensaje_respuesta = "Datos guardados correctamente en la base de datos.";
+    } else {
+        $mensaje_respuesta = "Error al guardar los datos: " . $conn->error;
+    }
+
+    // Cierra la conexión
+    $conn->close();
+}
+?>
+ 
+
+ <div class="row contact-form">
+    <div class="col-md-6">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240864.1946632267!2d-99.30842710059825!3d19.390659362026867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0026db097507%3A0x54061076265ee841!2sCiudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1718600487162!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+    <div class="col-md-6">
+        <div id="success"></div>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+            <div class="control-group">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required="required" data-validation-required-message="Ingresa tu nombre" />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="required" data-validation-required-message="Ingresa tu correo" />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Asunto" required="required" data-validation-required-message="Ingresa un asunto" />
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="control-group">
+                <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" required="required" data-validation-required-message="Ingresa un mensaje"></textarea>
+                <p class="help-block text-danger"></p>
+            </div>
+            <div>
+                <button class="btn custom-btn" type="submit" id="enviar">Enviar mensaje</button>
+            </div>
+        </form>
+
+<br>
+<?php if (isset($mensaje_respuesta)) { ?>
+    <p><?php echo $mensaje_respuesta; ?></p>
+<?php } ?>
+
+
+    </div>
+</div>
 </div>
 <!-- Contact End -->
 

@@ -14,7 +14,7 @@
       <div class="panel panel-default">
         <div class="panel-heading clearfix">
          <div class="pull-right">
-           <a href="add_product.php" class="btn btn-primary">Agregar producto</a>
+           <a href="add_product.php" class="btn btn-primary">Agregar imagen</a>
          </div>
         </div>
         <div class="panel-body">

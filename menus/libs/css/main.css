@@ -56,7 +56,7 @@ a {
 }
 
 .bg-red {
-  background-color: #FF7857;
+  background-color: #b5d0cc;
 }
 
 .panel-default > .panel-heading {
@@ -425,6 +425,40 @@ img.img-size-2 {
   width: 125px;
   height: 125px;
 }
+
+#hero {
+  position: relative;
+  height: 100vh; /* Hace que la sección ocupe el 100% del viewport height */
+  overflow: hidden; /* Para que la imagen no desborde la sección */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #3333335b; /* Color de fondo de respaldo */
+}
+
+#hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+.container {
+  z-index: 1; /* Coloca el contenido encima de la imagen */
+  color: white; /* Color del texto */
+}
+
+h2 {
+  font-size: 3em; /* Tamaño de la fuente del título */
+}
+
+p {
+  font-size: 1.5em; /* Tamaño de la fuente del párrafo */
+}
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
