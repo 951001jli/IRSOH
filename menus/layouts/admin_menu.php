@@ -23,7 +23,7 @@
     </a>
     <ul class="nav submenu">
        <li><a href="product.php">Ver solicitudes</a> </li>
-       <li><a href="add_product.php">Administrar solicitudes</a> </li>
+      <!--  <li><a href="add_product.php">Administrar solicitudes</a> </li> -->
    </ul>
   </li>
 

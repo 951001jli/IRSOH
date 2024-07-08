@@ -39,7 +39,7 @@
         </div>
         <div class="panel-value pull-right">
           <h2 class="margin-top"> <?php  echo $c_categorie['total']; ?> </h2>
-          <p class="text-muted">Categorías</p>
+          <p class="text-muted">Solicitudes</p>
         </div>
        </div>
     </div>
