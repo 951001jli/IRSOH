@@ -56,7 +56,7 @@
         <div class="panel-heading">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
-            <span>Agregar producto</span>
+            <span>Agregar solicitud</span>
          </strong>
         </div>
         <div class="panel-body">
@@ -81,15 +81,18 @@
                     <?php endforeach; ?>
                     </select>
                   </div>
-                  <div class="col-md-6">
+
+         <!--         <div class="col-md-6">
                     <select class="form-control" name="product-photo">
                       <option value="">Selecciona una imagen</option>
-                    <?php  foreach ($all_photo as $photo): ?>
-                      <option value="<?php echo (int)$photo['id'] ?>">
-                        <?php echo $photo['file_name'] ?></option>
-                    <?php endforeach; ?>
+                    ?php  foreach ($all_photo as $photo): ?>
+                      <option value="?php echo (int)$photo['id'] ?>">
+                        ?php echo $photo['file_name'] ?></option>
+                    ?php endforeach; ?>
                     </select>
                   </div>
+                    -->
+
                 </div>
               </div>
 
@@ -103,7 +106,8 @@
                      <input type="number" class="form-control" name="product-quantity" placeholder="Cantidad">
                   </div>
                  </div>
-                 <div class="col-md-4">
+
+            <!--     <div class="col-md-4">
                    <div class="input-group">
                      <span class="input-group-addon">
                        <i class="glyphicon glyphicon-usd"></i>
@@ -112,6 +116,8 @@
                      <span class="input-group-addon">.00</span>
                   </div>
                  </div>
+
+                    -->
                   <div class="col-md-4">
                     <div class="input-group">
                       <span class="input-group-addon">
@@ -123,7 +129,7 @@
                   </div>
                </div>
               </div>
-              <button type="submit" name="add_product" class="btn btn-danger">Agregar producto</button>
+              <button type="submit" name="add_product" class="btn btn-danger">Agregar solicitud</button>
           </form>
          </div>
         </div>

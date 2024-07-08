@@ -12,7 +12,7 @@
       <span>Productos</span>
     </a>
     <ul class="nav submenu">
-       <li><a href="productUsuario.php">Administrar solicitudes</a> </li>
+    <!--   <li><a href="productUsuario.php">Administrar solicitudes</a> </li>  -->
        <li><a href="add_product.php">Agregar solicitud</a> </li>
    </ul>
   </li>
