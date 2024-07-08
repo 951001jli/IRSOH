@@ -26,12 +26,16 @@
        <li><a href="add_product.php">Administrar solicitudes</a> </li>
    </ul>
   </li>
+
+  
   <li>
     <a href="media.php" >
       <i class="glyphicon glyphicon-picture"></i>
       <span>Media</span>
     </a>
   </li>
+
+  <!-- 
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-list"></i>
@@ -53,4 +57,6 @@
         <li><a href="daily_sales.php">Ventas diarias</a> </li>
       </ul>
   </li>
+
+  -->
 </ul>

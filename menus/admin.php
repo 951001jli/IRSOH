@@ -54,18 +54,18 @@
         </div>
        </div>
     </div>
+
+    
     <div class="col-md-3">
-       <div class="panel panel-box clearfix">
-         <div class="panel-icon pull-left bg-yellow">
-          <i class="glyphicon glyphicon-usd"></i>
-        </div>
-        <div class="panel-value pull-right">
-          <h2 class="margin-top"> <?php  echo $c_sale['total']; ?></h2>
-          <p class="text-muted">Ventas</p>
-        </div>
+      
+
+         
+        
        </div>
     </div>
 </div>
+
+<!--
 
   <div class="row">
    <div class="col-md-4">
@@ -86,18 +86,20 @@
            <tr>
           </thead>
           <tbody>
-            <?php foreach ($products_sold as  $product_sold): ?>
+            ?php foreach ($products_sold as  $product_sold): ?>
               <tr>
-                <td><?php echo remove_junk(first_character($product_sold['name'])); ?></td>
-                <td><?php echo (int)$product_sold['totalSold']; ?></td>
-                <td><?php echo (int)$product_sold['totalQty']; ?></td>
+                <td>?php echo remove_junk(first_character($product_sold['name'])); ?></td>
+                <td>?php echo (int)$product_sold['totalSold']; ?></td>
+                <td>?php echo (int)$product_sold['totalQty']; ?></td>
               </tr>
-            <?php endforeach; ?>
+            ?php endforeach; ?>
           <tbody>
          </table>
        </div>
      </div>
    </div>
+           
+
    <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -117,30 +119,35 @@
          </tr>
        </thead>
        <tbody>
-         <?php foreach ($recent_sales as  $recent_sale): ?>
+         ?php foreach ($recent_sales as  $recent_sale): ?>
          <tr>
-           <td class="text-center"><?php echo count_id();?></td>
+           <td class="text-center">?php echo count_id();?></td>
            <td>
-            <a href="edit_sale.php?id=<?php echo (int)$recent_sale['id']; ?>">
-             <?php echo remove_junk(first_character($recent_sale['name'])); ?>
+            <a href="edit_sale.php?id=?php echo (int)$recent_sale['id']; ?>">
+             ?php echo remove_junk(first_character($recent_sale['name'])); ?>
            </a>
            </td>
-           <td><?php echo remove_junk(ucfirst($recent_sale['date'])); ?></td>
-           <td>$<?php echo remove_junk(first_character($recent_sale['price'])); ?></td>
+           <td>?php echo remove_junk(ucfirst($recent_sale['date'])); ?></td>
+           <td>$?php echo remove_junk(first_character($recent_sale['price'])); ?></td>
         </tr>
 
-       <?php endforeach; ?>
+       ?php endforeach; ?>
        </tbody>
      </table>
     </div>
    </div>
   </div>
+
+   -->
+
+
+
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          <span>Productos recientemente añadidos</span>
+          <span>Solicitudes recientes</span>
         </strong>
       </div>
       <div class="panel-body">
