@@ -192,10 +192,10 @@ a:focus {
     }
 }
 
-@media (max-width: 991.98px) {   
+@media (max-width: 991.98px) {
     .navbar {
-        padding: 15px;
-        background: #ffffff !important;
+        padding: 15px 20px; /* Añadido un poco más de espacio horizontal para mejorar la accesibilidad */
+        background-color: #ffffff !important; /* Cambiado a background-color en lugar de background para mayor claridad */
     }
     
     .navbar .navbar-brand {
@@ -321,7 +321,7 @@ a:focus {
     .carousel,
     .carousel .carousel-item,
     .carousel .carousel-text {
-        height: calc(100vh - 105px);
+        height: auto; /* Cambiado de calc(100vh - 105px) a auto */
     }
     
     .carousel .carousel-text h1 {
@@ -343,7 +343,7 @@ a:focus {
     .carousel,
     .carousel .carousel-item,
     .carousel .carousel-text {
-        height: calc(100vh - 70px);
+        height: auto; /* Cambiado de calc(100vh - 70px) a auto */
     }
     
     .carousel .carousel-text h1 {
@@ -359,7 +359,7 @@ a:focus {
 
 @media (max-width: 575.98px) {
     .carousel .carousel-text h1 {
-        font-size: 25px;
+        font-size: 20px; /* Ajuste del tamaño de fuente para dispositivos pequeños */
     }
     
     .carousel .carousel-text .btn {
@@ -420,11 +420,11 @@ a:focus {
 
 @media (max-width: 767.98px) {
     .page-header h2 {
-        font-size: 35px;
+        font-size: 28px; /* Reducir el tamaño de fuente del h2 */
     }
     
     .page-header a {
-        font-size: 18px;
+        font-size: 16px; /* Reducir el tamaño de fuente de los enlaces */
     }
 }
 
@@ -453,25 +453,24 @@ a:focus {
 
 @media (max-width: 991.98px) {
     .section-header h2 {
-        font-size: 40px;
-        font-weight: 600;
+        font-size: 32px; /* Reducir el tamaño de fuente del h2 */
+        font-weight: 500; /* Ajustar el peso de la fuente según sea necesario */
     }
 }
 
-@media (max-width: 767.98px) {
-    .section-header h2 {
+.section-header h2 {
+    font-weight: 600; /* Mantener el peso de la fuente constante en ambos tamaños de pantalla */
+
+    /* Tamaño de fuente para dispositivos entre 576px y 767.98px */
+    @media (max-width: 767.98px) {
         font-size: 35px;
-        font-weight: 600;
     }
-}
 
-@media (max-width: 575.98px) {
-    .section-header h2 {
+    /* Tamaño de fuente para dispositivos menores o iguales a 575.98px */
+    @media (max-width: 575.98px) {
         font-size: 30px;
-        font-weight: 600;
     }
 }
-
 
 /*******************************/
 /********* Booking CSS *********/
@@ -795,11 +794,9 @@ a:focus {
 
 @media (max-width: 991.98px) {
     .about .about-img {
-        margin-bottom: 30px;
-        
+        margin-bottom: 1.5rem; /* Uso de rem para un margen inferior más flexible */
     }
 }
-
 
 /*******************************/
 /********* Feature CSS *********/
@@ -884,101 +881,69 @@ a:focus {
 /*******************************/
 /*********** Menu CSS **********/
 /*******************************/
+/* Estilos base para el menú */
 .menu {
-    position: relative;
-    padding: 45px 0 15px 0;
-}
-
-.menu .menu-tab {
-    position: relative;
-}
-
-.menu .menu-tab img {
-    max-width: 100%;
-    border-radius: 15px;
-}
-
-.menu .menu-tab .nav.nav-pills .nav-link {
-    color: #ffffff;
-    background: #4eabea;
-    border-radius: 5px;
-    margin: 0 5px;
-}
-
-.menu .menu-tab .nav.nav-pills .nav-link:hover,
-.menu .menu-tab .nav.nav-pills .nav-link.active {
-    color: #ffffff;
-    background: #979797;
-}
-
-.menu .menu-tab .tab-content {
-    padding: 30px 0 0 0;
-    background: transparent;
-}
-
-.menu .menu-tab .tab-content .container {
-    padding: 0;
-}
-
-.menu .menu-item {
-    position: relative;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-}
-
-.menu .menu-img {
-    width: 80px;
-    margin-right: 20px;
-}
-
-.menu .menu-img img {
-    width: 100%;
-    border-radius: 100px;
-}
-
-.menu .menu-text {
-    width: calc(100% - 100px);
-}
-
-.menu .menu-text h3 {
-    position: relative;
-    display: block;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.menu .menu-text h3::after {
     position: absolute;
-    content: "";
-    width: 100%;
-    height: 0;
-    top: 13px;
+    top: 0;
     left: 0;
-    border-top: 2px dotted #cccccc;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #ffffff; /* Fondo del menú */
+    z-index: 1000;
+    display: none; /* Ocultar el menú por defecto */
 }
 
-.menu .menu-text h3 span {
-    display: inline-block;
-    float: left;
-    padding-right: 5px;
-    background: #ffffff;
+.menu.active {
+    display: block; /* Mostrar el menú cuando está activo */
 }
 
-.menu .menu-text h3 strong {
-    display: inline-block;
-    float: right;
-    padding-left: 5px;
-    color: #4eabea;
-    background: #ffffff;
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100; /* Asegurar que esté sobre el menú */
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 10px;
 }
 
-.menu .menu-text p {
-    position: relative;
-    margin: 5px 0 0 0;
-    float: left;
+.menu-bar {
     display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #4eabea; /* Color de las barras del menú */
+    margin: 5px 0;
+    transition: background-color 0.3s ease; /* Transición suave del color */
+}
+
+.menu-toggle:hover .menu-bar {
+    background-color: #979797; /* Cambio de color al pasar el mouse */
+}
+
+/* Media query para mostrar el menú cuando se hace clic en el botón */
+@media (max-width: 991.98px) {
+    .menu {
+        padding: 45px 0 15px 0;
+    }
+
+    .menu .menu-items {
+        padding: 0 20px; /* Espacio adicional alrededor de los elementos del menú */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón de menú en pantallas pequeñas */
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-items a {
+        margin-bottom: 15px; /* Espacio entre elementos del menú */
+    }
 }
 
 @media(max-width: 575.98px) {
