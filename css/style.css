@@ -1536,180 +1536,197 @@ a:focus {
     border-radius: 5px;
 }
 
+/* Ejemplo de media query para tablet */
+@media (max-width: 1024px) {
+    /* Estilos específicos para tablets */
+}
+
+/* Ejemplo de media query para móviles */
+@media (max-width: 768px) {
+    /* Estilos específicos para móviles */
+}
 
 /**********************************/
 /*********** Sidebar CSS **********/
 /**********************************/
 .sidebar {
     position: relative;
-    width: 100%;
+    width: 300px; /* Ancho deseado de la barra lateral en pantallas grandes */
 }
 
-@media(max-width: 991.98px) {
+@media (max-width: 991.98px) {
     .sidebar {
+        width: 100%; /* Cambiamos el ancho a 100% en pantallas más pequeñas */
         margin-top: 45px;
     }
 }
 
 .sidebar .sidebar-widget {
-    position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 30px; /* Reducido el margen inferior en general */
 }
 
 .sidebar .sidebar-widget .widget-title {
-    position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 15px; /* Reducido el margen inferior del título */
     padding-bottom: 5px;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 20px; /* Reducida la fuente para dispositivos más pequeños */
+    font-weight: 600; /* Ajustada la intensidad de la fuente */
+    position: relative;
 }
 
 .sidebar .sidebar-widget .widget-title::after {
-    position: absolute;
     content: "";
-    width: 60px;
+    position: absolute;
+    width: 40px; /* Reducido el ancho de la línea */
     height: 2px;
     bottom: 0;
     left: 0;
     background: #4eabea;
 }
 
-.sidebar .sidebar-widget .search-widget {
-    position: relative;
-}
+@media (min-width: 768px) {
+    .sidebar .sidebar-widget {
+        margin-bottom: 45px; /* Restaurado el margen inferior para pantallas más grandes */
+    }
 
-.sidebar .search-widget input {
-    height: 50px;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-}
+    .sidebar .sidebar-widget .widget-title {
+        font-size: 25px; /* Restaurada la fuente para pantallas más grandes */
+        font-weight: 700; /* Restaurada la intensidad de la fuente para pantallas más grandes */
+    }
 
-.sidebar .search-widget input:focus {
-    box-shadow: none;
-}
-
-.sidebar .search-widget .btn {
-    position: absolute;
-    top: 6px;
-    right: 15px;
-    height: 40px;
-    padding: 0;
-    font-size: 25px;
-    color: #4eabea;
-    background: none;
-    border-radius: 0;
-    border: none;
-    transition: .3s;
-}
-
-.sidebar .search-widget .btn:hover {
-    color: #979797;
-}
-
-.sidebar .sidebar-widget .recent-post {
-    position: relative;
-}
-
-.sidebar .sidebar-widget .tab-post {
-    position: relative;
-}
-
-.sidebar .tab-post .nav.nav-pills .nav-link {
-    color: #ffffff;
-    background: #4eabea;
-    border-radius: 0;
-}
-
-.sidebar .tab-post .nav.nav-pills .nav-link:hover,
-.sidebar .tab-post .nav.nav-pills .nav-link.active {
-    color: #ffffff;
-    background: #979797;
-}
-
-.sidebar .tab-post .tab-content {
-    padding: 15px 0 0 0;
-    background: transparent;
-}
-
-.sidebar .tab-post .tab-content .container {
-    padding: 0;
-}
-
-.sidebar .sidebar-widget .category-widget {
-    position: relative;
-}
-
-.sidebar .category-widget ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar .category-widget ul li {
-    margin: 0 0 12px 22px; 
-}
-
-.sidebar .category-widget ul li:last-child {
-    margin-bottom: 0; 
-}
-
-.sidebar .category-widget ul li a {
-    display: inline-block;
-    line-height: 23px;
-}
-
-.sidebar .category-widget ul li::before {
-    position: absolute;
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #4eabea;
-    left: 1px;
-}
-
-.sidebar .category-widget ul li span {
-    display: inline-block;
-    float: right;
-}
-
-.sidebar .sidebar-widget .tag-widget {
-    position: relative;
-    margin: -5px -5px;
-}
-
-.single .tag-widget a {
-    margin: 5px;
-    display: inline-block;
-    padding: 7px 15px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #4eabea;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-}
-
-.single .tag-widget a:hover {
-    color: #ffffff;
-    background: #4eabea;
-    border-color: #4eabea;
-}
-
-.sidebar .image-widget {
-    display: block;
-    width: 100%;
-    overflow: hidden;
-}
-
-.sidebar .image-widget img {
-    max-width: 100%;
-    transition: .3s;
-}
-
-.sidebar .image-widget img:hover {
-    transform: scale(1.1);
-}
+    .sidebar .sidebar-widget .widget-title::after {
+        width: 60px; /* Restaurado el ancho de la línea para pantallas más grandes */
+    }
 
 
+    .sidebar .search-widget input {
+        height: 50px;
+        width: calc(100% - 60px); /* Ajustar el ancho del input para dejar espacio al botón */
+        max-width: 300px; /* Limitar el ancho máximo para que no se extienda demasiado en pantallas grandes */
+        border: 1px solid #dddddd;
+        border-radius: 5px;
+        padding-left: 15px; /* Añadir espacio a la izquierda para el texto dentro del input */
+        box-sizing: border-box; /* Incluir el padding y el borde en el ancho total */
+    }
+    
+    .sidebar .search-widget .btn {
+        position: absolute;
+        top: 6px;
+        right: 15px;
+        height: 38px; /* Reducir un poco la altura para ajustarse mejor */
+        line-height: 38px; /* Centrar verticalmente el texto dentro del botón */
+        padding: 0 10px; /* Añadir relleno a los lados del botón */
+        font-size: 18px; /* Reducir el tamaño del texto del botón para dispositivos pequeños */
+        color: #4eabea;
+        background: none;
+        border-radius: 5px;
+        border: 1px solid #4eabea; /* Añadir un borde para resaltar el botón */
+        transition: .3s;
+    }
+    
+    .sidebar .search-widget .btn:hover {
+        color: #979797;
+        border-color: #979797; /* Cambiar el color del borde al pasar el cursor por encima */
+    }
+    
+    .sidebar .sidebar-widget .recent-post,
+    .sidebar .sidebar-widget .tab-post {
+        position: relative;
+        margin-bottom: 20px; /* Espacio entre cada elemento */
+    }
+    
+    .sidebar .tab-post .nav.nav-pills .nav-link {
+        color: #ffffff;
+        background: #4eabea;
+        border-radius: 0;
+    }
+    
+    .sidebar .tab-post .nav.nav-pills .nav-link:hover,
+    .sidebar .tab-post .nav.nav-pills .nav-link.active {
+        background: #979797;
+    }
+    
+    .sidebar .tab-post .tab-content {
+        padding: 15px 0;
+        background: transparent;
+    }
+    
+    .sidebar .tab-post .tab-content .container {
+        padding: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .sidebar .tab-post .nav.nav-pills .nav-link {
+            font-size: 14px; /* Reducir el tamaño del texto de las píldoras en pantallas pequeñas si es necesario */
+        }
+        
+        .sidebar .tab-post .tab-content {
+            padding: 10px 0;
+        }
+    
+    
+        .sidebar .sidebar-widget .category-widget {
+            position: relative;
+        }
+        
+        .sidebar .category-widget ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .sidebar .category-widget ul li {
+            margin-bottom: 12px;
+            position: relative; /* Añadido para contener el ícono y el texto correctamente */
+        }
+        
+        .sidebar .category-widget ul li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .sidebar .category-widget ul li a {
+            display: inline-block;
+            line-height: 23px;
+            padding-left: 20px; /* Añadido padding izquierdo para separar el texto del ícono */
+        }
+        
+        .sidebar .category-widget ul li::before {
+            position: absolute;
+            content: '\f105';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #4eabea;
+            left: 0;
+            top: 0;
+        }
+        
+        .sidebar .category-widget ul li span {
+            float: right;
+        }
+        
+        .sidebar .sidebar-widget .tag-widget {
+            position: relative;
+            margin: 0; /* Ajusté el margen para que no haya un margen negativo */
+        }
+        
+        .single .tag-widget a {
+            margin: 5px;
+            display: inline-block;
+            padding: 7px 15px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #4eabea;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Añadí transiciones para suavizar los cambios */
+        }
+        
+        .single .tag-widget a:hover {
+            color: #ffffff;
+            background: #4eabea;
+            border-color: #4eabea;
+        }
+        
+        
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
@@ -1956,26 +1973,32 @@ a:focus {
     font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-image: url(../images/i.jpg );
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+body {
+    background-image: url(../images/i.jpg);
+    background-size: cover; /* Ajusta la imagen de fondo para cubrir toda la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+    margin: 0; /* Asegura que no haya márgenes externos */
+    padding: 0; /* Asegura que no haya relleno */
 }
 
-main{
+main {
     width: 100%;
-    padding: 20px;
-    margin: auto;
-    margin-top: 100px;
+    max-width: 800px; /* Limita el ancho máximo del contenido */
+    margin: auto; /* Centra el contenido horizontalmente */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    margin-top: 100px; /* Añade margen superior para separar del borde superior */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
-.contenedor__todo{
+.contenedor__todo {
     width: 100%;
-    max-width: 800px;
-    margin: auto;
-    position: relative;
+    max-width: 800px; /* Limita el ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    position: relative; /* Establece la posición relativa */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
 .caja__trasera{
@@ -2124,5 +2147,3 @@ main{
         position: relative;
     }
 }
-
- 
