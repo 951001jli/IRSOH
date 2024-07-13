@@ -1632,7 +1632,7 @@ a:focus {
         position: relative;
         margin-bottom: 20px; /* Espacio entre cada elemento */
     }
-    
+}    
     .sidebar .tab-post .nav.nav-pills .nav-link {
         color: #ffffff;
         background: #4eabea;
@@ -1725,7 +1725,7 @@ a:focus {
             border-color: #4eabea;
         }
         
-        
+    }        
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
