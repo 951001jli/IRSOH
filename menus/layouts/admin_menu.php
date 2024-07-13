@@ -31,7 +31,7 @@
   <li>
     <a href="media.php" >
       <i class="glyphicon glyphicon-picture"></i>
-      <span>Media</span>
+      <span>Galeria</span>
     </a>
   </li>
 
