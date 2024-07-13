@@ -192,12 +192,11 @@ a:focus {
     }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 991.98px) {   
     .navbar {
-        padding: 15px 20px; /* Añadido un poco más de espacio horizontal para mejorar la accesibilidad */
-        background-color: #ffffff !important; /* Cambiado a background-color en lugar de background para mayor claridad */
+        padding: 15px;
+        background: #ffffff !important;
     }
-
     
     .navbar .navbar-brand {
         color: #4eabea;
@@ -322,7 +321,7 @@ a:focus {
     .carousel,
     .carousel .carousel-item,
     .carousel .carousel-text {
-        height: auto; /* Cambiado de calc(100vh - 105px) a auto */
+        height: calc(100vh - 105px);
     }
     
     .carousel .carousel-text h1 {
