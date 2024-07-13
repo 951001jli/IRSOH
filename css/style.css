@@ -192,11 +192,12 @@ a:focus {
     }
 }
 
-@media (max-width: 991.98px) {   
+@media (max-width: 991.98px) {
     .navbar {
-        padding: 15px;
-        background: #ffffff !important;
+        padding: 15px 20px; /* Añadido un poco más de espacio horizontal para mejorar la accesibilidad */
+        background-color: #ffffff !important; /* Cambiado a background-color en lugar de background para mayor claridad */
     }
+
     
     .navbar .navbar-brand {
         color: #4eabea;
