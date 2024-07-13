@@ -322,7 +322,7 @@ a:focus {
     .carousel,
     .carousel .carousel-item,
     .carousel .carousel-text {
-        height: calc(100vh - 105px);
+        height: auto; /* Cambiado de calc(100vh - 105px) a auto */
     }
     
     .carousel .carousel-text h1 {
