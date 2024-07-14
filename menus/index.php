@@ -22,7 +22,7 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 
 <style>
   body {
-    background-image: url(../img/white.jpg);
+    background-image: url(../img/sismo4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -36,7 +36,7 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
   }
 
   .login-page {
-    background-color: #fff;
+    background-color: #ffffff95;
     padding: 20px;
     border-radius: 25px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -47,8 +47,8 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 
   .login-page h1 {
     color: #007bff;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    margin-bottom: 5px;
   }
 
   .login-page p {
@@ -58,8 +58,7 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 
   .form-control {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #007bff;
+    padding: 10px; 
     border-radius: 40px;
     margin-bottom: 20px;
   }

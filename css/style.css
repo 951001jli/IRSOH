@@ -376,9 +376,9 @@ a:focus {
 .page-header {
     position: relative;
     margin-bottom: 45px;
-    padding: 150px 0 250px 0;
+    padding: 150px 0 180px 0;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/headersismo.jpg);
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/tres.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

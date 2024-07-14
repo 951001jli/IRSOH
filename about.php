@@ -291,8 +291,25 @@
                             </div>
                         </div>
                         <div class="team-text">
-                            <h2>Yolibet</h2>
+                            <h2>Yolibet Águilar</h2>
                             <p>Programadora</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="img/perfil-img.jpg" alt="Image">
+                            <div class="team-social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a> 
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-text">
+                            <h2>Joseph Alarcón</h2>
+                            <p>Programador</p>
                         </div>
                     </div>
                 </div>
@@ -308,7 +325,7 @@
                             </div>
                         </div>
                         <div class="team-text">
-                            <h2>Lizet</h2>
+                            <h2>Lizet Garduño</h2>
                             <p>Programadora</p>
                         </div>
                     </div>
@@ -324,7 +341,7 @@
                             </div>
                         </div>
                         <div class="team-text">
-                            <h2>Luis</h2>
+                            <h2>Luis Izquierdo</h2>
                             <p>Programador</p>
                         </div>
                     </div>
@@ -340,7 +357,7 @@
                             </div>
                         </div>
                         <div class="team-text">
-                            <h2>Brandon</h2>
+                            <h2>Brandon Hernández</h2>
                             <p>Programador</p>
                         </div>
                     </div>

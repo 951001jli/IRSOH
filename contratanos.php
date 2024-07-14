@@ -210,7 +210,7 @@ session_start();
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="img/equipo.jpg" alt="Image">
+                        <img src="img/pagos.php.webp" alt="Image">
                     </div>
                 </div>
                 <div class="col-lg-6">
