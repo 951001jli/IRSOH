@@ -1,14 +1,10 @@
-
 <?php
   ob_start();
   require_once('includes/load.php');
   if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 ?>
- 
-
  <style>
   body {
-
     background-image: url(../img/bg4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
