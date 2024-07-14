@@ -1893,21 +1893,21 @@ a:focus {
 
 .footer .footer-social {
     position: relative;
-    margin-top: 20px;
+    margin-top: 5px;
     display: flex;
 }
 
 .footer .footer-social a {
     display: inline-block;
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
+    margin-right: 23px;
+    width: 75px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #4eabea;
-    border-radius: 35px;
-    font-size: 16px;
+    border-radius: 50px;
+    font-size: 28px;
     color: #ffffff;
 }
 

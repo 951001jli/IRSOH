@@ -328,12 +328,7 @@
                             
                                     <p><i class="fa fa-phone-alt"></i>55 3232 3232</p>
                                     <p><i class="fa fa-envelope"></i>workbots@workbots.com</p>
-                                    <div class="footer-social">
-                                        <a href=""><i class="fab fa-twitter"></i></a>
-                                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a href=""><i class="fab fa-instagram"></i></a>
-                               
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -342,23 +337,18 @@
                                     <a href="">Terminos de uso</a>
                                     <a href="">Politica de privacidad</a>
                                     
-                                    <a href="">Ayuda</a>
-                             
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <div class="footer-newsletter">
-                            <h2>Newsletter</h2>
-                            <p>
-                            Descubre cómo la tecnología de vanguardia salva vidas y mejora las operaciones de emergencia. ¡Únete a nuestra misión de hacer del mundo un lugar más seguro!
-                            </p>
-                            <div class="form">
-                                <input class="form-control" placeholder="Escribe tu email">
-                                <button class="btn custom-btn">Enviar</button>
-                            </div>
-                        </div>
+                    <div class="footer-social">
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                               
+                                    </div>
                     </div>
                 </div>
             </div>
