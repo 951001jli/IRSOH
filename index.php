@@ -146,7 +146,7 @@
                             <p>
                                 En cada escombro, una esperanza: descubre cómo nuestro robot devuelve la luz en los momentos más oscuros.
                             </p>
-                            <a href="/irsoh/menus/index.php" class="btn-contratanos">Contrátanos</a>
+                            <a href="/irsoh/contratanos.php" class="btn-contratanos">Contrátanos</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -158,7 +158,7 @@
                             <p>
                                 Un rayo de esperanza en medio del caos: nuestro robot busca entre los escombros para salvar vidas y traer alivio a los corazones desesperados.
                             </p>
-                            <a href="/irsoh/menus/index.php" class="btn-contratanos">Contrátanos</a>
+                            <a href="/irsoh/contratanos.php" class="btn-contratanos">Contrátanos</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -172,7 +172,7 @@
                             </p>
                    
     
-                            <a href="/irsoh/menus/index.php" class="btn-contratanos">Contrátanos</a>
+                            <a href="/irsoh/contratanos.php" class="btn-contratanos">Contrátanos</a>
 
     
                         </div>
