@@ -89,10 +89,12 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
-                    <a href="index.php" class="nav-item nav-link">Inicio</a>
-                    <a href="about.php" class="nav-item nav-link">Nosotros</a>
-                    <a href="contact.php" class="nav-item nav-link">Contacto</a>
-                    <a href="contratanos.php" class="nav-item nav-link highlighted-link">Quiero el servicio</a>
+                <a href="http://localhost/irsoh/index.php" class="nav-item nav-link">Inicio</a>
+
+
+                    <a href="http://localhost/irsoh/about.php" class="nav-item nav-link">Nosotros</a>
+                    <a href="http://localhost/irsoh/contact.php" class="nav-item nav-link">Contacto</a>
+                    <a href="http://localhost/irsoh/contratanos.php" class="nav-item nav-link highlighted-link">Quiero el servicio</a>
                 
                 </div>
             </div>
