@@ -1,29 +1,47 @@
 <?php
-  ob_start();
-  require_once('includes/load.php');
-  if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
+ob_start();
+require_once('includes/load.php');
+if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
 ?>
- <style>
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet"> 
+
+<!-- CSS Libraries -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+
+<style>
   body {
-    background-image: url(../img/bg4.jpg);
+    background-image: url(../img/white.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
   }
-  
+
+  .navbar {
+    margin-bottom: 20px; /* Space between navbar and content */
+  }
+
   .login-page {
     background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 25px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     width: 300px;
+    margin: auto; /* Center the login box */
     text-align: center;
   }
 
@@ -38,16 +56,12 @@
     margin-bottom: 20px;
   }
 
-  .form-group {
-    margin-bottom: 15px;
-  }
-
   .form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #007bff;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    border-radius: 40px;
+    margin-bottom: 20px;
   }
 
   .btn-info {
@@ -55,7 +69,7 @@
     border: none;
     padding: 10px 20px;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 25px;
     cursor: pointer;
   }
 
@@ -64,34 +78,54 @@
   }
 </style>
 
+<body>
 
-<div  >
-<div class="login-page">
-    <div class="text-center">
-       <h1>Bienvenidos</h1>
-       <p>Iniciar sesión</p>
-     </div>
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">IR<span>SOH</span></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="index.php" class="nav-item nav-link">Inicio</a>
+                    <a href="about.php" class="nav-item nav-link">Nosotros</a>
+                    <a href="contact.php" class="nav-item nav-link">Contacto</a>
+                    <a href="contratanos.php" class="nav-item nav-link highlighted-link">Quiero el servicio</a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
 
-     
-     <?php echo display_msg($msg); ?>
-
-
-    <form method="post" action="auth.php" class="clearfix">
-    <div class="form-group">
-              <label for="username" class="control-label"> Usuario </label>
-              <input type="name" class="form-control" name="username" placeholder="Usuario">
+    <div class="login-page" style="margin-top: 100px;"> <!-- Add margin to avoid overlap with navbar -->
+        <div class="text-center">
+            <h1>Bienvenido</h1>
+            <p>Iniciar sesión</p>
         </div>
 
-        <div class="form-group">
-            <label for="Password" class="control-label">Contraseña</label>
-            <input type="password" name= "password" class="form-control" placeholder="Contraseña">
-        </div>
+        <?php echo display_msg($msg); ?>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-info pull-right">Entrar</button>
-        </div>
-    </form>
-</div>
+        <form method="post" action="auth.php" class="clearfix">
+            <div class="form-group">
+                <label for="username" class="control-label">Usuario</label>
+                <input type="text" class="form-control" name="username" placeholder="Usuario">
+            </div>
 
-</div>
-</div>
+            <div class="form-group">
+                <label for="Password" class="control-label">Contraseña</label>
+                <input type="password" name="password" class="form-control" placeholder="Contraseña">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-info pull-right">Entrar</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
