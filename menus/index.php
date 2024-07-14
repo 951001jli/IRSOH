@@ -32,7 +32,7 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
   }
 
   .navbar {
-    margin-bottom: 20px; /* Space between navbar and content */
+    margin-bottom: 10px; /* Space between navbar and content */
   }
 
   .login-page {
@@ -75,6 +75,12 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
   .btn-info:hover {
     background-color: #0056b3;
   }
+
+
+  
+
+          
+
 </style>
 
 <body>
@@ -125,8 +131,22 @@ if($session->isUserLoggedIn(true)) { redirect('home.php', false);}
         </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</body>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
 </html>
