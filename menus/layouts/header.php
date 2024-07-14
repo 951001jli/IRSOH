@@ -20,9 +20,7 @@
     <header id="header">
       <div class="logo pull-left"> IRSOH </div>
       <div class="header-content">
-      <div class="header-date pull-left">
-        <strong><?php echo date("d/m/Y  g:i a");?></strong>
-      </div>
+       
       <div class="pull-right clearfix">
         <ul class="info-menu list-inline list-unstyled">
           <li class="profile">

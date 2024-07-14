@@ -1,37 +1,12 @@
-<?php
-  $page_title = 'Admin página de inicio';
-  require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
-   page_require_level(1);
-?>
-<?php
- $c_categorie     = count_by_id('categories');
- $c_product       = count_by_id('products');
- $c_sale          = count_by_id('sales');
- $c_user          = count_by_id('users');
- $products_sold   = find_higest_saleing_product('10');
- $recent_products = find_recent_product_added('5');
- $recent_sales    = find_recent_sale_added('5')
-?>
-<?php include_once('layouts/header.php'); ?>
-
-<div class="row">
-   <div class="col-md-6">
-     <?php echo display_msg($msg); ?>
-   </div>
-</div>
-
-  
-
-  <div class="col-md-10">
- 
-        <strong>
-         
-          <h3>Comentarios</h3>
-        </strong>
  
 
-      <style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentarios de Contacto</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -51,8 +26,9 @@
             background-color: #f2f2f2;
         }
     </style>
- 
-    
+</head>
+<body>
+    <h2>Comentarios de Contacto</h2>
     <table>
         <thead>
             <tr>
@@ -98,12 +74,7 @@
             ?>
         </tbody>
     </table>
+</body>
+</html>
 
-  </div>
  
- 
-  
-
-
-
-<?php include_once('layouts/footer.php'); ?>
