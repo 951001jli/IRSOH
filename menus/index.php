@@ -85,10 +85,14 @@ if($session->isUserLoggedIn(true)) { redirect('admin.php', false);}
 
 <body>
 
+
+
     <!-- Nav Bar Start -->
     <div class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
         <div class="container-fluid">
-            <a href="#" class="navbar-brand">IR<span>SOH</span></a>
+        <div class="logo pull-left">
+    <img src="http://localhost/irsoh/img/capturalogo.png" alt="IRSOH Logo" class="img-fluid" style="width: 98px; height: 30px;">
+    </div>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -105,6 +109,15 @@ if($session->isUserLoggedIn(true)) { redirect('admin.php', false);}
             </div>
         </div>
     </div>
+
+
+    <br>
+    <br>
+
+  
+ 
+
+
 
     <div class="login-page" style="margin-top: 100px;"> <!-- Add margin to avoid overlap with navbar -->
         <div class="text-center">
@@ -131,8 +144,7 @@ if($session->isUserLoggedIn(true)) { redirect('admin.php', false);}
         </form>
     </div>
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
+   
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

@@ -17,12 +17,14 @@
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
+    <div class="panel-heading">
       <div class="panel-heading clearfix">
         <strong>
-          <span class="glyphicon glyphicon-th"></span>
+          <span class="glyphicon glyphicon-user"></span>
           <span>Usuarios</span>
        </strong>
          <a href="add_user.php" class="btn btn-info pull-right">Agregar usuario</a>
+      </div>
       </div>
      <div class="panel-body">
       <table class="table table-bordered table-striped">

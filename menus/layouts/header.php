@@ -18,7 +18,12 @@
   <body>
   <?php  if ($session->isUserLoggedIn(true)): ?>
     <header id="header">
-      <div class="logo pull-left"> IRSOH </div>
+
+    <div class="logo pull-left">
+    <img src="http://localhost/irsoh/img/capturalogo.png" alt="IRSOH Logo" class="img-fluid" style="width: 98px; height: 30px;">
+
+    </div>
+
       <div class="header-content">
        
       <div class="pull-right clearfix">
@@ -29,12 +34,7 @@
               <span><?php echo remove_junk(ucfirst($user['name'])); ?> <i class="caret"></i></span>
             </a>
             <ul class="dropdown-menu">
-              <li>
-                  <a href="profile.php?id=<?php echo (int)$user['id'];?>">
-                      <i class="glyphicon glyphicon-user"></i>
-                      Perfil
-                  </a>
-              </li>
+               
              <li>
                  <a href="edit_account.php" title="edit account">
                      <i class="glyphicon glyphicon-cog"></i>
@@ -53,6 +53,8 @@
       </div>
      </div>
     </header>
+
+   
     <div class="sidebar">
       <?php if($user['user_level'] === '1'): ?>
         <!-- admin menu -->
@@ -74,4 +76,5 @@
 
 
 <div class="page">
+ 
   <div class="container-fluid">

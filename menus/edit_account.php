@@ -42,12 +42,13 @@
     }
   }
 ?>
+
 <?php include_once('layouts/header.php'); ?>
 <div class="row">
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-12 mb-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <div class="panel-heading clearfix">
@@ -58,8 +59,9 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-4">
-                <img class="img-circle img-size-2" src="uploads/users/<?php echo $user['image'];?>" alt="">
+                <img class="img-circle img-size-2" src="uploads/users/<?php echo $user['image'];?>" alt=""  style="width: 180px; height: 180px;">
             </div>
+            <br>
             <div class="col-md-8">
               <form class="form" action="edit_account.php" method="POST" enctype="multipart/form-data">
               <div class="form-group">
@@ -75,11 +77,14 @@
         </div>
       </div>
   </div>
-  <div class="col-md-6">
+
+  <div class="col-md-12">
     <div class="panel panel-default">
+    <div class="panel-heading">
       <div class="panel-heading clearfix">
         <span class="glyphicon glyphicon-edit"></span>
         <span>Editar mi cuenta</span>
+      </div>
       </div>
       <div class="panel-body">
           <form method="post" action="edit_account.php?id=<?php echo (int)$user['id'];?>" class="clearfix">
@@ -100,6 +105,7 @@
     </div>
   </div>
 </div>
+
 
 
 <?php include_once('layouts/footer.php'); ?>

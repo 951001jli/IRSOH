@@ -28,9 +28,11 @@
 
       <div class="col-md-12">
         <div class="panel panel-default">
+        <div class="panel-heading">
           <div class="panel-heading clearfix">
             <span class="glyphicon glyphicon-camera"></span>
             <span>Lista de imagenes</span>
+ 
             <div class="pull-right">
               <form class="form-inline" action="media.php" method="POST" enctype="multipart/form-data">
               <div class="form-group">
@@ -43,6 +45,7 @@
                </div>
               </div>
              </form>
+            </div>
             </div>
           </div>
           <div class="panel-body">

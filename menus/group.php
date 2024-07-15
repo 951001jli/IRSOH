@@ -14,12 +14,15 @@
 <div class="row">
   <div class="col-md-12">
     <div class="panel panel-default">
+    <div class="panel-heading">
     <div class="panel-heading clearfix">
       <strong>
         <span class="glyphicon glyphicon-th"></span>
         <span>Grupos</span>
      </strong>
+     
        <a href="add_group.php" class="btn btn-info pull-right btn-sm"> Agregar grupo</a>
+    </div>
     </div>
      <div class="panel-body">
       <table class="table table-bordered">
