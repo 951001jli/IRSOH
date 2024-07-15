@@ -62,17 +62,25 @@
                 <img class="img-circle img-size-2" src="uploads/users/<?php echo $user['image'];?>" alt=""  style="width: 180px; height: 180px;">
             </div>
             <br>
-            <div class="col-md-8">
-              <form class="form" action="edit_account.php" method="POST" enctype="multipart/form-data">
-              <div class="form-group">
-                <input type="file" name="file_upload" multiple="multiple" class="btn btn-default btn-file"/>
-              </div>
-              <div class="form-group">
-                <input type="hidden" name="user_id" value="<?php echo $user['id'];?>">
-                 <button type="submit" name="submit" class="btn btn-warning">Cambiar</button>
-              </div>
-             </form>
-            </div>
+
+
+            <div class="col-md-6">
+  <form class="form" action="edit_account.php" method="POST" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+      <div class="input-group">
+        <input type="file" name="file_upload" multiple="multiple" class="form-control" id="fileUpload" />
+        <span class="input-group-btn">
+          <button type="submit" name="submit" class="btn btn-warning">Cambiar</button>
+        </span>
+      </div>
+    </div>
+    <input type="hidden" name="user_id" value="<?php echo $user['id'];?>">
+  </form>
+</div>
+
+
+
+
           </div>
         </div>
       </div>
@@ -96,6 +104,7 @@
                   <label for="username" class="control-label">Usuario</label>
                   <input type="text" class="form-control" name="username" value="<?php echo remove_junk(ucwords($user['username'])); ?>">
             </div>
+            <br>
             <div class="form-group clearfix">
                     <a href="change_password.php" title="change password" class="btn btn-danger pull-right">Cambiar contraseña</a>
                     <button type="submit" name="update" class="btn btn-info">Actualizar</button>

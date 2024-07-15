@@ -70,10 +70,12 @@ if(isset($_POST['update-pass'])) {
   <div class="col-md-6">
      <div class="panel panel-default">
        <div class="panel-heading">
+       <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           Actualiza cuenta <?php echo remove_junk(ucwords($e_user['name'])); ?>
         </strong>
+       </div>
        </div>
        <div class="panel-body">
           <form method="post" action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" class="clearfix">
@@ -111,10 +113,12 @@ if(isset($_POST['update-pass'])) {
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
+      <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           Cambiar <?php echo remove_junk(ucwords($e_user['name'])); ?> contraseña
         </strong>
+      </div>
       </div>
       <div class="panel-body">
         <form action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" method="post" class="clearfix">

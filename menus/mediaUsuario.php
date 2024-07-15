@@ -28,6 +28,7 @@
 
       <div class="col-md-12">
         <div class="panel panel-default">
+        <div class="panel-heading">
           <div class="panel-heading clearfix">
             <span class="glyphicon glyphicon-camera"></span>
             <span>Lista de imagenes</span>
@@ -41,11 +42,12 @@
              </form>
             </div>
           </div>
+</div>
           <div class="panel-body">
             <table class="table">
               <thead>
                 <tr>
-                  <th class="text-center" style="width: 50px;">#</th>
+          <!--        <th class="text-center" style="width: 50px;">#</th>   -->
                   <th class="text-center">Imagen</th>
                   <th class="text-center">Descripción</th>
                   <th class="text-center" style="width: 20%;">Tipo</th>
@@ -55,7 +57,7 @@
                 <tbody>
                 <?php foreach ($media_files as $media_file): ?>
                 <tr class="list-inline">
-                 <td class="text-center"><?php echo count_id();?></td>
+     <!--               <td class="text-center"><php echo count_id();?></td>      -->
                   <td class="text-center">
                       <img src="uploads/products/<?php echo $media_file['file_name'];?>" class="img-thumbnail" />
                   </td>

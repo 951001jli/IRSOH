@@ -41,12 +41,14 @@
   <?php echo display_msg($msg); ?>
   <div class="row">
     <div class="panel panel-default">
+    <div class="panel-heading">
       <div class="panel-heading">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
           <span>Agregar usuario</span>
        </strong>
       </div>
+</div>
       <div class="panel-body">
         <div class="col-md-6">
           <form method="post" action="add_user.php">
