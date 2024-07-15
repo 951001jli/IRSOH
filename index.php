@@ -333,9 +333,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="footer-link">
-                                    <h2>Enlaces</h2>
-                                    <a href="">Terminos de uso</a>
-                                    <a href="">Politica de privacidad</a>
+                                <h2>Enlaces</h2>
+<a href="pdf/terminos.pdf" target="_blank">Términos de uso</a>
+<a href="pdf/politicas.pdf" target="_blank">Política de privacidad</a>
+
                                     
                                     
                                 </div>
