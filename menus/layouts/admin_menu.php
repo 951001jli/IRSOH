@@ -15,7 +15,7 @@
       <li><a href="users.php">Administrar usuarios</a> </li>
    </ul>
   </li>
- 
+ <!--
   <li>
     <a href="#" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
@@ -23,9 +23,18 @@
     </a>
     <ul class="nav submenu">
        <li><a href="product.php">Ver solicitudes</a> </li>
-      <!--  <li><a href="add_product.php">Administrar solicitudes</a> </li> -->
+         <li><a href="add_product.php">Administrar solicitudes</a> </li> 
    </ul>
   </li>
+ -->
+
+ <li>
+    <a href="#" class="submenu-toggle">
+      <i class="glyphicon glyphicon-th-large"></i>
+      <span>Citas</span>
+    </a>
+  </li>
+
 
   
   <li>
