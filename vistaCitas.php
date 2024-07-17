@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="container mt-5">
     <h1 class="text-center">Vista de Citas</h1>
     <div class="table-responsive">
@@ -29,11 +30,11 @@
         <tbody>
             <?php
             // Incluir el archivo de conexión
-            include 'php/conexion_be.php';
+            include 'conexion_be.php';
 
             // Consultar las citas
             $sql = "SELECT * FROM citas";
-            $result = $conexion->query($sql);
+            $result = $con->query($sql);
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
@@ -58,7 +59,7 @@
             }
 
             // Cerrar la conexión
-            $conexion->close();
+            $con->close();
             ?>
         </tbody>
     </table>

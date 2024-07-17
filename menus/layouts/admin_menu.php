@@ -29,7 +29,7 @@
  -->
 
  <li>
-    <a href="#" class="submenu-toggle">
+    <a href="/IRSOH/vistaCitas.php" class="submenu-toggle">
       <i class="glyphicon glyphicon-th-large"></i>
       <span>Citas</span>
     </a>
