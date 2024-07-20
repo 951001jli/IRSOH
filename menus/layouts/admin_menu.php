@@ -116,7 +116,7 @@ body {
         <a href="admin.php" class="active"><i class="glyphicon glyphicon-align-center"></i><span>Comentarios</span></a>
         <a href="users.php"><i class="glyphicon glyphicon-user"></i><span>Usuarios</span></a>
         <a href="group.php"><i class="glyphicon glyphicon-th-large"></i><span>Grupos</span></a>
-        <a href="/IRSOH/vistaCitas.php"><i class="glyphicon glyphicon-list-alt"></i><span>Citas</span></a>
+        <a href="citas.php"><i class="glyphicon glyphicon-list-alt"></i><span>Citas</span></a>
         <a href="media.php"><i class="glyphicon glyphicon-picture"></i><span>Galería</span></a>
     </div>
 </body>

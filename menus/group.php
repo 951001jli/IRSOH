@@ -17,7 +17,7 @@
     <div class="panel-heading">
     <div class="panel-heading clearfix">
       <strong>
-        <span class="glyphicon glyphicon-th"></span>
+        <span class="glyphicon glyphicon-th-large"></span>
         <span>Grupos</span>
      </strong>
      

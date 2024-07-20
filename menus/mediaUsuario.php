@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
         <div class="panel panel-default">
             <div class="panel-heading clearfix">
             <div class="panel-heading">
-                <span class="glyphicon glyphicon-camera"></span>
+                <span class="glyphicon glyphicon-picture"></span>
                 <span>Lista de imagenes</span>
                 <div class="pull-right">
                     <form class="form-inline" action="media.php" method="POST" enctype="multipart/form-data">

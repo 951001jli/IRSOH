@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vista de Citas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php 
+  require_once('includes/load.php');
+?>
+<?php include_once('layouts/header.php'); ?>
 
-<div class="container mt-5">
-    <h1 class="text-center">Vista de Citas</h1>
-    <div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre Completo</th>
+<div class="row">
+   <div class="col-md-12">
+   
+   </div>
+
+   <div class="col-md-12 mb-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-heading clearfix">
+      <span class="glyphicon glyphicon-list-alt"></span>
+      <span>Citas</span>
+      
+      </div>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive"> <!-- Añadir esta línea -->
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="text-center" style="width: 50px;">ID</th>
+                <th>Nombre</th>
                 <th>Teléfono</th>
                 <th>Correo</th>
                 <th>Domicilio</th>
@@ -25,12 +32,17 @@
                 <th>Plan</th>
                 <th>Estatus</th>
                 <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
+              </tr>
+            </thead>
+            <tbody>
             <?php
             // Incluir el archivo de conexión
-            include 'conexion_be.php';
+            $con = mysqli_connect("localhost", "root", "", "oswa_inv");
+
+            // Verificar conexión
+            if (!$con) {
+                die("Conexión fallida: " . mysqli_connect_error());
+            }
 
             // Consultar las citas
             $sql = "SELECT * FROM citas";
@@ -61,7 +73,12 @@
             // Cerrar la conexión
             $con->close();
             ?>
-        </tbody>
-    </table>
+          </tbody>
+          </table>
+        </div> <!-- Cerrar el div table-responsive -->
+      </div>
     </div>
+  </div>
 </div>
+
+<?php include_once('layouts/footer.php'); ?>
