@@ -988,14 +988,14 @@ a:focus {
 
 .team .team-img {
     position: relative;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0px 0px;
     overflow: hidden;
 }
 
 .team .team-img img {
     position: relative;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 5px;
     transform: scale(1.1);
     transition: .3s;
 }

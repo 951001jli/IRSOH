@@ -283,7 +283,7 @@
                 <div class="col-md-2">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/perfil-img.jpg" alt="Image">
+                            <img src="img/yolibet.webp" alt="Image">
                             <div class="team-social">
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-facebook-f"></i></a> 
@@ -317,7 +317,7 @@
                 <div class="col-md-2">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/perfil-img.jpg" alt="Image">
+                            <img src="img/liz.webp" alt="Image">
                             <div class="team-social">
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-facebook-f"></i></a> 
@@ -333,7 +333,7 @@
                 <div class="col-md-2">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/perfil-img.jpg" alt="Image">
+                            <img src="img/luis.webp" alt="Image">
                             <div class="team-social">
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-facebook-f"></i></a> 
@@ -349,7 +349,7 @@
                 <div class="col-md-2">
                     <div class="team-item">
                         <div class="team-img">
-                            <img src="img/perfil-img.jpg" alt="Image">
+                            <img src="img/brandon.webp" alt="Image">
                             <div class="team-social">
                                 <a href=""><i class="fab fa-twitter"></i></a>
                                 <a href=""><i class="fab fa-facebook-f"></i></a> 
