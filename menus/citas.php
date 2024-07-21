@@ -61,7 +61,12 @@ if ($result->num_rows > 0) {
         echo "<td>" . htmlspecialchars($row['plan']) . "</td>";
         echo "<td>" . htmlspecialchars($row['estatus']) . "</td>";
         echo "<td>";
-        echo "<a href='actualizarEstatus.php?id=" . $row['id'] . "&estatus=Concretada' class='btn btn-info btn-sm'>Concretada</a>";
+  // Formulario para actualizar el estatus
+  echo "<form method='post' action=''>";
+  echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
+  echo "<input type='hidden' name='estatus' value='Concretada'>";
+  echo "<button type='submit' class='btn btn-info btn-sm'>Concretada</button>";
+  echo "</form>";      
         echo "<a href='media.php' class='btn btn-warning btn-sm'>Galería</a>";
         echo "</td>";
         echo "</tr>";
@@ -81,4 +86,28 @@ $con->close();
   </div>
 </div>
 
+
+<?php
+// Lógica de actualización del estatus
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = isset($_POST['id']) ? intval($_POST['id']) : 0;
+    $estatus = isset($_POST['estatus']) ? $_POST['estatus'] : '';
+
+    if ($id > 0 && !empty($estatus)) {
+        // Crear la consulta de actualización
+        $con = mysqli_connect("localhost", "root", "", "oswa_inv");
+
+        if (!$con) {
+            die("Conexión fallida: " . mysqli_connect_error());
+        }
+
+        $stmt = $con->prepare("UPDATE citas SET estatus = ? WHERE id = ?");
+        $stmt->bind_param("si", $estatus, $id);
+        $stmt->execute();
+        $stmt->close();
+        $con->close();
+
+      }
+}
+?>
 <?php include_once('layouts/footer.php'); ?>
