@@ -62,7 +62,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . htmlspecialchars($row['estatus']) . "</td>";
         echo "<td>";
         echo "<a href='actualizarEstatus.php?id=" . $row['id'] . "&estatus=Concretada' class='btn btn-info btn-sm'>Concretada</a>";
-        echo "<a href='actualizarEstatus.php?id=" . $row['id'] . "&estatus=Pendiente' class='btn btn-warning btn-sm'>Galería</a>";
+        echo "<a href='media.php' class='btn btn-warning btn-sm'>Galería</a>";
         echo "</td>";
         echo "</tr>";
     }
