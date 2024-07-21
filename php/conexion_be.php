@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "irsoh_db");
+$conexion = mysqli_connect("localhost", "root", "", "oswa_inv");
 /*
 if($conexion){
 echo 'conectado a la base de datos';
