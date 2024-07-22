@@ -1,25 +1,28 @@
 <?php 
+  $page_title = 'Lista de citas';
   require_once('includes/load.php');
 ?>
 <?php include_once('layouts/header.php'); ?>
 
 <div class="row">
-   <div class="col-md-12">
-   
-   </div>
-
-   <div class="col-md-12 mb-4">
+  <div class="col-md-12">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
   <div class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-heading clearfix">
+      <strong>
       <span class="glyphicon glyphicon-list-alt"></span>
       <span>Citas</span>
+      </strong>
       </div>
       </div>
       <div class="panel-body">
         <div class="table-responsive"> <!-- Añadir esta línea -->
-          <table class="table table-bordered">
-            <thead>
+        <table class="table table-bordered table-striped">
+        <thead>
               <tr>
                 <th class="text-center" style="width: 50px;">ID</th>
                 <th>Nombre</th>
