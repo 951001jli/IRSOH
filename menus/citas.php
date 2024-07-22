@@ -4,6 +4,12 @@
 ?>
 <?php include_once('layouts/header.php'); ?>
 
+<style>
+    .font-size-15 {
+        font-size: 15px;
+    }
+</style>
+
 <div class="row">
   <div class="col-md-12">
   </div>
@@ -24,16 +30,16 @@
         <table class="table table-bordered table-striped">
         <thead>
               <tr>
-                <th class="text-center" style="width: 50px;">ID</th>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Domicilio</th>
-                <th>Fecha</th>
-                <th>Hora</th>
-                <th>Plan</th>
-                <th>Estatus</th>
-                <th>Acciones</th>
+                <th class="text-center" style="width: 50px; font-size: 15px;">#</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Nombre</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Teléfono</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Correo</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Domicilio</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Fecha</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Hora</th>
+                <th class="text-center" style="width: 10%; font-size: 15px;">Plan</th>
+                <th style="width: 10%; font-size: 15px;">Status</th>
+                <th class="text-center" style="width: 100px; font-size: 15px;">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -53,24 +59,24 @@ $result = $con->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . htmlspecialchars($row['nombre_completo']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['telefono']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['correo']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['domicilio']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['fecha']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['hora']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['plan']) . "</td>";
-        echo "<td>" . htmlspecialchars($row['estatus']) . "</td>";
-        echo "<td>";
+        echo "<td class='font-size-15'>" . $row['id'] . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['nombre_completo']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['telefono']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['correo']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['domicilio']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['fecha']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['hora']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['plan']) . "</td>";
+        echo "<td class='font-size-15'>" . htmlspecialchars($row['estatus']) . "</td>";
+        echo "<td class='font-size-15'>";
   // Formulario para actualizar el estatus
   echo "<form method='post' action=''>";
   echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
   echo "<input type='hidden' name='estatus' value='Concretada'>";
-  echo "<button type='submit' class='btn btn-info btn-sm'>Concretada</button>";
+  echo "<button type='submit' class='btn btn-info btn-sm' style='font-size: 12px;'>Concretada</button>";
   echo "</form>";      
-        echo "<a href='media.php' class='btn btn-warning btn-sm'>Galería</a>";
-        echo "</td>";
+  echo "<a href='media.php' class='btn btn-warning btn-sm' style='font-size: 12px;'>Galería</a>";
+          echo "</td>";
         echo "</tr>";
     }
 } else {
