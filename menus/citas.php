@@ -14,7 +14,6 @@
       <div class="panel-heading clearfix">
       <span class="glyphicon glyphicon-list-alt"></span>
       <span>Citas</span>
-      
       </div>
       </div>
       <div class="panel-body">

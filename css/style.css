@@ -2145,4 +2145,14 @@ main {
     .contenedor__login-register form{
         position: relative;
     }
+
+    .custom-text {
+      font-family: 'Nunito', sans-serif;
+      color: grey;
+      line-height: 1.6;
+      text-transform: none; /* Mantiene las mayúsculas y minúsculas tal cual están */
+    }
+    
+
+
 }
