@@ -19,7 +19,7 @@
       </div>
       <div class="panel-body">
         <div class="table-responsive"> <!-- Añadir esta línea -->
-          <table class="table table-bordered">
+          <table class="table table-bordered"><br><br><br>
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h4 class="custom-text"> Gracias por elegirnos y adquirir uno de nuestros planes de renta. <br><br> Estamos comprometidos en ofrecerte una experiencia excepcional y asegurarnos de que <br> obtengas el máximo provecho de nuestro servicio.
                      <br> <br>Te invitamos a explorar todas las ventajas que te ofrecemos y a disfrutar de una experiencia <br>sin preocupaciones.
@@ -29,9 +29,17 @@
                      
                     </h4>
                   </div>
-                  <img src="../img/plan.jpeg" alt="" width="216" height="189" style="object-fit: cover; border-radius: 5px;">   
+                  <img src="../img/plan.jpeg" alt="" width="216" height="189" style="object-fit: cover; border-radius: 5px;"> <br><br><br><br><br>
                </div>
               </div>
+
+              <div
+                class="alert alert-primary"
+                role="alert"
+              >
+              <h5>Copyright &copy; <a href="#">WorkBots</a>, Todos los derechos reservados.</h5>
+              </div>
+              
  </body>
 
  

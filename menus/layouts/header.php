@@ -22,11 +22,9 @@
 
     <div class="logo pull-left">
     <img src="http://localhost/irsoh/img/capturalogo.png" alt="IRSOH Logo" class="img-fluid" style="width: 98px; height: 30px;">
-
     </div>
 
       <div class="header-content">
-       
       <div class="pull-right clearfix">
         <ul class="info-menu list-inline list-unstyled">
           <li class="profile">
@@ -35,29 +33,28 @@
               <span><?php echo remove_junk(ucfirst($user['name'])); ?> <i class="caret"></i></span>
             </a>
             <ul class="dropdown-menu">
-               
-             <li>
-                 <a href="edit_account.php" title="edit account">
-                     <i class="glyphicon glyphicon-cog"></i>
-                     Configuración
-                 </a>
-             </li>
-             <li class="last">
-                 <a href="logout.php">
-                     <i class="glyphicon glyphicon-off"></i>
-                     Salir
-                 </a>
-             </li>
-           </ul>
+            
+            <li>
+              <a href="edit_account.php" title="edit account">
+                <i class="glyphicon glyphicon-cog"></i>
+                  Configuración
+              </a>
+            </li>
+            
+            <li class="last">
+              <a href="logout.php">
+                <i class="glyphicon glyphicon-off"></i>
+                  Salir
+              </a>
+            </li>
+          </ul>
           </li>
         </ul>
       </div>
-     </div>
+    </div>
     </header>
 
-   
     <div>
-      
       <?php if($user['user_level'] === '1'): ?>
         <!-- admin menu -->
       <?php include_once('admin_menu.php');?>
@@ -72,15 +69,10 @@
 
       <?php endif;?>
 
-   </div>
+  </div>
 <?php endif;?>
-
-
 
 <div class="page">
   <br>
- 
+
   <div class="container-fluid">
-
-
- 
