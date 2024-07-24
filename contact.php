@@ -172,7 +172,7 @@
                     </div>
                     <div class="contact-text">
                         <h3>Llámanos</h3>
-                        <p>+012 345 6789</p>
+                        <p>55 786 7093</p>
                     </div>
                 </div>
             </div>
@@ -183,7 +183,7 @@
                     </div>
                     <div class="contact-text">
                         <h3>Email</h3>
-                        <p>WorkBots@WorkBots.com</p>
+                        <p>workbots9@gmail.com</p>
                     </div>
                 </div>
             </div>
