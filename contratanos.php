@@ -29,7 +29,7 @@ session_start();
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <!-- SCRIPT PAYPAL -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AVxsm-M0yPEDGH9Ols99k6HDXgNqslcAxQYimXNwgslHXmHxzvHFeC3lG41ukvcAm-CSQMpXibPa5ose&currency=MXN"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcsfpV_Z8f2917OCqnpNMVZPWv_j9sBjcHkuymvZeipgg4YVJ5b5aU10vHsxzu3trq854YYbWvGoNTMT&currency=MXN"></script>
 
 
     <style>
