@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <title>IRSOH</title>
@@ -24,7 +24,18 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
 
-
+         <!-- pwa -->
+         <link href="manifest.json" rel="manifest">
+        
+         <!-- pwa -->
+        <meta name="theme-color" content="#878788">
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta rel="shortcut icon" type="image/jpg" href="pwa/images/icons/icon-72x72.png">
+        <meta rel="apple-touch-icon" href="pwa/images/icons/icon-144x144.png">
+        <meta rel="apple-touch-startup-image" href="pwa/images/icons/icon-512x512.png">
 
         <style>
             @keyframes heartbeat {
@@ -376,8 +387,11 @@
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
+        <script src="js/jquery-3.6.0.js"></script>
+        <script src="regist_serviceWorker.js"></script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
     </body>
 </html>
+/irsoh/index.php
