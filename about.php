@@ -377,8 +377,8 @@
                                 <div class="footer-contact">
                                     <h2>Datos de contacto</h2>
                             
-                                    <p><i class="fa fa-phone-alt"></i>55 3232 3232</p>
-                                    <p><i class="fa fa-envelope"></i>workbots@workbots.com</p>
+                                    <p><i class="fa fa-phone-alt"></i>55 7806 7093</p>
+                                    <p><i class="fa fa-envelope"></i>workbots9@gmail.com</p>
                                    
                                 </div>
                             </div>
