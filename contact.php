@@ -161,7 +161,7 @@
                     </div>
                     <div class="contact-text">
                         <h3>Dirección</h3>
-                        <p>123 calle, CDMX</p>
+                        <p>Av. Insurgentes 2046, CDMX</p>
                     </div>
                 </div>
             </div>
