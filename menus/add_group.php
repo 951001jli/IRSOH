@@ -45,7 +45,8 @@
 <?php include_once('layouts/header.php'); ?>
 <div class="login-page">
     <div class="text-center">
-       <h3>Agregar nuevo grupo de usurios</h3>
+      <br>
+       <h3>Agregar nuevo grupo de usuarios</h3>
      </div>
      <?php echo display_msg($msg); ?>
       <form method="post" action="add_group.php" class="clearfix">
@@ -67,6 +68,7 @@
         <div class="form-group clearfix">
                 <button type="submit" name="add" class="btn btn-info">Guardar</button>
         </div>
+        <br>
     </form>
 </div>
 
