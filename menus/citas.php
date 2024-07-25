@@ -94,7 +94,6 @@ $con->close();
   </div>
 </div>
 
-
 <?php
 // Lógica de actualización del estatus
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -108,14 +107,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$con) {
             die("Conexión fallida: " . mysqli_connect_error());
         }
-
         $stmt = $con->prepare("UPDATE citas SET estatus = ? WHERE id = ?");
         $stmt->bind_param("si", $estatus, $id);
         $stmt->execute();
         $stmt->close();
         $con->close();
 
-      }
+     }
 }
 ?>
 <?php include_once('layouts/footer.php'); ?>
