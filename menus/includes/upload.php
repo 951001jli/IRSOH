@@ -67,7 +67,7 @@ class  Media {
       $this->errors[] = $this->productPath." Debe tener permisos de escritura!!!.";
       return false;
     elseif(file_exists($this->productPath."/".$this->fileName)):
-      $this->errors[] = "El archivo {$this->fileName} realmente existe.";
+      $this->errors[] = "El archivo {$this->fileName} ya se subió previamente.";
       return false;
     else:
      return true;
@@ -91,7 +91,7 @@ class  Media {
       }
 
     if(file_exists($this->productPath."/".$this->fileName)){
-      $this->errors[] = "El archivo {$this->fileName} Realmente existe.";
+      $this->errors[] = "El archivo {$this->fileName} ya se subió previamente.";
       return false;
     }
 
