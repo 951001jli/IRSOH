@@ -64,8 +64,43 @@ if(isset($_POST['update-pass'])) {
 }
 
 ?>
+
+
 <?php include_once('layouts/header.php'); ?>
- <div class="row">
+
+<style>
+  /* Aumenta el tamaño de la fuente en el formulario */
+  .form-control {
+    font-size: 15px; /* Ajusta el tamaño de la fuente según tus necesidades */
+  }
+  
+ 
+
+  /* Redondea los bordes del formulario */
+  .panel-body form {
+    border-radius: 25px; /* Redondea los bordes del formulario */
+    padding: 20px; /* Añade un poco de espacio interno alrededor del formulario */
+    border: 0px solid #ddd; /* Añade un borde gris claro alrededor del formulario */
+  }
+
+  /* Redondea los bordes de los campos del formulario */
+  .form-control, .form-control select {
+    border-radius: 25px; /* Redondea los bordes de los campos del formulario */
+  }
+
+  /* Aumenta el tamaño del texto en los botones */
+  .btn {
+    font-size: 15px; /* Ajusta el tamaño de la fuente de los botones */
+  }
+
+    /* Redondear los bordes de los botones */
+    .btn-rounded {
+    border-radius: 25px; /* Redondea los bordes del botón */
+  }
+</style>
+
+
+<div class="row">
    <div class="col-md-12"> <?php echo display_msg($msg); ?> </div>
   <div class="col-md-6">
      <div class="panel panel-default">
@@ -73,22 +108,22 @@ if(isset($_POST['update-pass'])) {
        <div class="panel-heading clearfix">
         <strong>
           <span class="glyphicon glyphicon-th"></span>
-          Actualiza cuenta <?php echo remove_junk(ucwords($e_user['name'])); ?>
+          Actualizar cuenta <?php echo remove_junk(ucwords($e_user['name'])); ?>
         </strong>
        </div>
        </div>
        <div class="panel-body">
           <form method="post" action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" class="clearfix">
             <div class="form-group">
-                  <label for="name" class="control-label">Nombres</label>
+                  <label for="name" class="control-label"><h3>Nombres</h3></label>
                   <input type="name" class="form-control" name="name" value="<?php echo remove_junk(ucwords($e_user['name'])); ?>">
             </div>
             <div class="form-group">
-                  <label for="username" class="control-label">Usuario</label>
+                  <label for="username" class="control-label"><h3>Usuario</h3></label>
                   <input type="text" class="form-control" name="username" value="<?php echo remove_junk(ucwords($e_user['username'])); ?>">
             </div>
             <div class="form-group">
-              <label for="level">Rol de usuario</label>
+              <label for="level"><h3>Rol de usuario</h3></label>
                 <select class="form-control" name="level">
                   <?php foreach ($groups as $group ):?>
                    <option <?php if($group['group_level'] === $e_user['user_level']) echo 'selected="selected"';?> value="<?php echo $group['group_level'];?>"><?php echo ucwords($group['group_name']);?></option>
@@ -96,20 +131,23 @@ if(isset($_POST['update-pass'])) {
                 </select>
             </div>
             <div class="form-group">
-              <label for="status">Estado</label>
+              <label for="status"><h3>Estado</h3></label>
                 <select class="form-control" name="status">
                   <option <?php if($e_user['status'] === '1') echo 'selected="selected"';?>value="1">Activo</option>
                   <option <?php if($e_user['status'] === '0') echo 'selected="selected"';?> value="0">Inactivo</option>
                 </select>
             </div>
             <div class="form-group clearfix">
-                    <button type="submit" name="update" class="btn btn-info">Actualizar</button>
+              <br>
+                    <button type="submit" name="update" class="btn btn-info  btn-rounded">Actualizar</button>
             </div>
         </form>
        </div>
      </div>
   </div>
+  
   <!-- Change password form -->
+   
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -123,11 +161,12 @@ if(isset($_POST['update-pass'])) {
       <div class="panel-body">
         <form action="edit_user.php?id=<?php echo (int)$e_user['id'];?>" method="post" class="clearfix">
           <div class="form-group">
-                <label for="password" class="control-label">Contraseña</label>
+                <label for="password" class="control-label"><h3>Contraseña</h3></label>
                 <input type="password" class="form-control" name="password" placeholder="Ingresa la nueva contraseña" required>
           </div>
           <div class="form-group clearfix">
-                  <button type="submit" name="update-pass" class="btn btn-danger pull-right">Cambiar</button>
+            <br>
+                  <button type="submit" name="update-pass" class="btn btn-danger pull-right btn-rounded">Cambiar</button>
           </div>
         </form>
       </div>
@@ -135,4 +174,7 @@ if(isset($_POST['update-pass'])) {
   </div>
 
  </div>
+ <br>
+ <br>
+ <br>
 <?php include_once('layouts/footer.php'); ?>

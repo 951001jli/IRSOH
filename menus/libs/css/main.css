@@ -366,31 +366,22 @@ table td h6, table tfoot tr td:last-child {
 }
 
 .btn {
-  border-radius: 3px;
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
+  border-radius: 3px; 
+  border-radius: 25px; 
 }
 
 .btn-primary {
   color: #fff;
   background-color: #51aded;
   border-color: #3d8fd8;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
+  border-radius: 25px; 
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active {
   color: #fff;
   background-color: #3175b8;
   border-color: #3d8fd8;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
+  border-radius: 25px; 
 }
 
 .btn-success {
@@ -410,18 +401,10 @@ table td h6, table tfoot tr td:last-child {
 .btn-warning {
   background-color: #e7c13e;
   border-color: #dfba3c;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
+  border-radius: 25px; 
 }
 
-.btn-warning:hover, .btn-warning:focus, .btn-warning.focus, .btn-warning:active, .btn-warning.active {
-  background-color: #d0ac2c;
-  border-color: #dfba3c;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
-}
+
 
 .alert {
   padding: 15px;
@@ -432,22 +415,16 @@ table td h6, table tfoot tr td:last-child {
 
 .btn-danger {
   background-color: #ed5153;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
+  background-color: #ed5153;
+  border-radius: 25px; 
 }
 
-.btn-danger:hover, .btn-danger:focus, .btn-danger.focus, .btn-danger:active, .btn-danger.active {
-  background-color: #bb282a;
-  border-radius: 25px;
-  padding: 3px 10px; /* Ajusta el tamaño del padding para hacerlo más grande */
-  font-size: 18px;    /* Incrementa el tamaño de la fuente */
-}
-
+ 
 .input-group-addon {
   background-color: #fcfcfc;
   border: 1px solid #dbdbdb;
   border-radius: 0;
+  border-radius: 25px;
 }
 
  

@@ -16,8 +16,7 @@ if (isset($_POST['submit'])) {
         $session->msg('d', join($photo->errors));
         redirect('media.php');
     }
-}
-?>
+}?>
 <?php include_once('layouts/header.php'); ?>
 
 <!-- Asegúrate de que estos enlaces estén incluidos en tu header -->
@@ -31,50 +30,77 @@ if (isset($_POST['submit'])) {
         height: 200px;
         object-fit: cover;
     }
+    
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-body {
+        background-color: #f8f9fa;
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 15px; /* Tamaño del texto ajustado a 15px */
+        margin-bottom: 0.5rem;
+        color: black; /* Color negro para el nombre del archivo */
+    }
+
+    .card-text {
+        color: black; /* Color negro para el tipo de archivo */
+    }
+
+    .btn-download {
+        font-size: 14px;
+        border-radius: 20px;
+    }
+
+    .modal-content {
+        border-radius: 15px;
+    }
+
+    .title-black {
+        color: black; /* Color negro para el título */
+    }
 </style>
 
-<div class="row">
-    <div class="col-md-6">
-        <?php echo display_msg($msg); ?>
+
+
+<div class="container my-5">
+    <?php echo display_msg($msg); ?>
+    
+    <div class="text-center mb-4">
+        <h2 class="fw-bold title-black" >Galería de Imágenes</h2>
     </div>
-    <div class="col-md-12">
-        <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-                <span class="glyphicon glyphicon-picture"></span>
-                <span>Imágenes</span>
-                <div class="pull-right">
-                    <form class="form-inline" action="media.php" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <!-- Add input elements here if needed -->
-                            </div>
-                        </div>
-                    </form>
+    <br>
+    <div class="row">
+        <?php foreach ($media_files as $media_file): ?>
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card">
+                <img src="uploads/products/<?php echo $media_file['file_name']; ?>" class="card-img-top" alt="<?php echo $media_file['file_name']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="uploads/products/<?php echo $media_file['file_name']; ?>">
+                <div class="card-body text-center">
+                    <h5 class="card-title"><?php echo $media_file['file_name']; ?></h5>
+                    
+                    <a href="uploads/products/<?php echo $media_file['file_name']; ?>" download class="btn btn-primary btn-download" title="Descargar">
+                        Descargar
+                    </a>
+                    
                 </div>
+                
             </div>
-            <div class="panel-body">
-                <div class="row">
-                    <?php foreach ($media_files as $media_file): ?>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card mb-4">
-                            <img src="uploads/products/<?php echo $media_file['file_name']; ?>" class="card-img-top img-thumbnail" alt="<?php echo $media_file['file_name']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="uploads/products/<?php echo $media_file['file_name']; ?>">
-                            <div class="card-body">
-                                <h5 class="card-title text-center"><?php echo $media_file['file_name']; ?></h5>
-                                <p class="card-text text-center"><?php echo $media_file['file_type']; ?></p>
-                                <div class="text-center">
-                                    <a href="uploads/products/<?php echo $media_file['file_name']; ?>" download class="btn btn-primary btn-sm" title="Descargar">
-                                        <span class="glyphicon glyphicon-download"></span> Descargar
-                                    </a>
-                                </div> <br>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div><br> <br> <br>
+        </div>
+        <?php endforeach; ?>
     </div>
 </div>
+<br>
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">

@@ -18,6 +18,20 @@
     </head>
   <body>
   <?php  if ($session->isUserLoggedIn(true)): ?>
+
+
+    <style>
+    .info-menu .dropdown-menu {
+    border-radius: 25px; /* Bordes redondeados */
+}
+
+.info-menu .dropdown-menu li a {
+    border-radius: 25px; /* Asegúrate de que los elementos del menú también tengan bordes redondeados si es necesario */
+}
+
+
+</style>
+    
     <header id="header">
 
     <div class="logo pull-left">

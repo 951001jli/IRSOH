@@ -15,7 +15,30 @@
 ?>
 <?php include_once('layouts/header.php'); ?>
 
-<div class="row">
+<style>
+  .large-font {
+    font-size: 14px; /* Ajusta el tamaño de la fuente según tus necesidades */
+  }
+  .custom-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .custom-table th,
+  .custom-table td {
+    border: none;
+    padding: 8px;
+  }
+  .custom-table tr {
+    border-bottom: 1px solid #ddd;
+  }
+  .custom-table tr:last-child {
+    border-bottom: none;
+  }
+
+  
+</style>
+
+<div class="row large-font">
   <div class="col-md-12">
     <?php echo display_msg($msg); ?>
   </div>
@@ -23,16 +46,16 @@
 
 <div class="col-md-12 mb-4">
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading large-font">
       <div class="panel-heading clearfix">
       <span class="glyphicon glyphicon-align-center"></span>
       <span>Comentarios</span>
         
       </div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body large-font">
       <div class="table-responsive">
-        <table class="table table-bordered table-striped">
+        <table class="table custom-table">
           <thead>
             <tr>
               <th>Nombre</th>
