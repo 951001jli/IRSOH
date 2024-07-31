@@ -1,19 +1,39 @@
 <?php
-  $page_title = 'Admin página de inicio';
-  require_once('includes/load.php');
-  // Checkin What level user has permission to view this page
-  page_require_level(1);
+$page_title = 'Admin página de inicio';
+require_once('includes/load.php');
+// Checkin What level user has permission to view this page
+page_require_level(1);
+
+// Variables de paginación
+$results_per_page = 7; // Número de resultados por página
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$start_from = ($page - 1) * $results_per_page;
+
+// Obtener el número total de comentarios
+$servername = "localhost";
+$username = "root"; // Reemplaza con tu usuario de MySQL
+$password = ""; // Reemplaza con tu contraseña de MySQL
+$database = "oswa_inv"; // Reemplaza con el nombre de tu base de datos
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Verifica la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Consulta para contar el número total de comentarios
+$count_sql = "SELECT COUNT(*) AS total FROM contactanos";
+$count_result = $conn->query($count_sql);
+$total_rows = $count_result->fetch_assoc()['total'];
+$total_pages = ceil($total_rows / $results_per_page);
+
+// Consulta SQL para seleccionar los comentarios con paginación
+$sql = "SELECT nombre, email, asunto, mensaje FROM contactanos LIMIT $start_from, $results_per_page";
+$result = $conn->query($sql);
+
+include_once('layouts/header.php');
 ?>
-<?php
- $c_categorie     = count_by_id('categories');
- $c_product       = count_by_id('products');
- $c_sale          = count_by_id('sales');
- $c_user          = count_by_id('users');
- $products_sold   = find_higest_saleing_product('10');
- $recent_products = find_recent_product_added('5');
- $recent_sales    = find_recent_sale_added('5');
-?>
-<?php include_once('layouts/header.php'); ?>
 
 <style>
   .large-font {
@@ -34,8 +54,20 @@
   .custom-table tr:last-child {
     border-bottom: none;
   }
-
-  
+  .pagination {
+    margin: 20px 0;
+  }
+  .pagination a {
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    color: #007bff;
+    text-decoration: none;
+  }
+  .pagination a.active {
+    background-color: #007bff;
+    color: white;
+  }
 </style>
 
 <div class="row large-font">
@@ -50,7 +82,6 @@
       <div class="panel-heading clearfix">
       <span class="glyphicon glyphicon-align-center"></span>
       <span>Comentarios</span>
-        
       </div>
     </div>
     <div class="panel-body large-font">
@@ -66,23 +97,6 @@
           </thead>
           <tbody>
             <?php
-            // Conexión a la base de datos
-            $servername = "localhost";
-            $username = "root"; // Reemplaza con tu usuario de MySQL
-            $password = ""; // Reemplaza con tu contraseña de MySQL
-            $database = "oswa_inv"; // Reemplaza con el nombre de tu base de datos
-
-            $conn = new mysqli($servername, $username, $password, $database);
-
-            // Verifica la conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
-            }
-
-            // Consulta SQL para seleccionar todos los comentarios de la tabla contactanos
-            $sql = "SELECT nombre, email, asunto, mensaje FROM contactanos";
-            $result = $conn->query($sql);
-
             // Mostrar los resultados en la tabla
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
@@ -101,6 +115,23 @@
           </tbody>
         </table>
       </div>
+      
+      <!-- Paginación -->
+      <div class="pagination">
+        <?php
+        if ($page > 1) {
+            echo "<a href='?page=" . ($page - 1) . "'>&laquo; Anterior</a>";
+        }
+        for ($i = 1; $i <= $total_pages; $i++) {
+            $active = $i == $page ? 'active' : '';
+            echo "<a href='?page=$i' class='$active'>$i</a>";
+        }
+        if ($page < $total_pages) {
+            echo "<a href='?page=" . ($page + 1) . "'>Siguiente &raquo;</a>";
+        }
+        ?>
+      </div>
+      
     </div>
   </div>
 </div>

@@ -41,16 +41,28 @@
         background-color: #ffffff; /* Fondo blanco para filas pares */
     }
 
+    .btn-custom, 
+    .label-custom,
+    .btn-group .btn {
+        border-radius: 25px; /* Bordes redondeados */
+    }
 
-  .btn-custom, 
-  .label-custom,
+    .pagination {
+        margin: 20px 0;
+    }
 
-  .btn-group .btn {
-    border-radius: 25px; /* Bordes redondeados */
-  }
-  
+    .pagination a {
+        padding: 8px 16px;
+        margin: 0 4px;
+        border: 1px solid #ddd;
+        color: #007bff;
+        text-decoration: none;
+    }
 
-
+    .pagination a.active {
+        background-color: #007bff;
+        color: white;
+    }
 </style>
 
 <div class="row">
@@ -87,7 +99,12 @@
             </thead>
             <tbody>
             <?php
-              // Incluir el archivo de conexión
+              // Variables de paginación
+              $results_per_page = 7; // Número de resultados por página
+              $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+              $start_from = ($page - 1) * $results_per_page;
+
+              // Conexión a la base de datos
               $con = mysqli_connect("localhost", "root", "", "oswa_inv");
 
               // Verificar conexión
@@ -95,8 +112,14 @@
                 die("Conexión fallida: " . mysqli_connect_error());
               }
 
-              // Consultar las citas
-              $sql = "SELECT * FROM citas";
+              // Obtener el número total de citas
+              $count_sql = "SELECT COUNT(*) AS total FROM citas";
+              $count_result = $con->query($count_sql);
+              $total_rows = $count_result->fetch_assoc()['total'];
+              $total_pages = ceil($total_rows / $results_per_page);
+
+              // Consultar las citas con paginación
+              $sql = "SELECT * FROM citas LIMIT $start_from, $results_per_page";
               $result = $con->query($sql);
 
               if ($result->num_rows > 0) {
@@ -116,9 +139,9 @@
                   echo "<form method='post' action=''>";
                   echo "<input type='hidden' name='id' value='" . $row['id'] . "'>";
                   echo "<input type='hidden' name='estatus' value='Concretada'>";
-                  echo "<button type='submit' class='btn btn-info btn-lg  btn-custom' style='font-size: 15px;'>Concretada</button>";
+                  echo "<button type='submit' class='btn btn-info btn-lg btn-custom' style='font-size: 15px;'>Concretada</button>";
                   echo "</form>";      
-                  echo "<a href='media.php' class='btn btn-warning btn-lg  btn-custom' style='font-size: 15px;'>Galería</a>";
+                  echo "<a href='media.php' class='btn btn-warning btn-lg btn-custom' style='font-size: 15px;'>Galería</a>";
                   echo "</td>";
                   echo "</tr>";
                 }
@@ -132,6 +155,22 @@
             </tbody>
           </table>
         </div> <!-- Cerrar el div table-responsive -->
+
+        <!-- Paginación -->
+        <div class="pagination">
+          <?php
+          if ($page > 1) {
+              echo "<a href='?page=" . ($page - 1) . "'>&laquo; Anterior</a>";
+          }
+          for ($i = 1; $i <= $total_pages; $i++) {
+              $active = $i == $page ? 'active' : '';
+              echo "<a href='?page=$i' class='$active'>$i</a>";
+          }
+          if ($page < $total_pages) {
+              echo "<a href='?page=" . ($page + 1) . "'>Siguiente &raquo;</a>";
+          }
+          ?>
+        </div>
       </div>
     </div>
   </div>

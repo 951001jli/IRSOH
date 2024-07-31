@@ -67,7 +67,7 @@ class  Media {
       $this->errors[] = $this->productPath." Debe tener permisos de escritura!!!.";
       return false;
     elseif(file_exists($this->productPath."/".$this->fileName)):
-      $this->errors[] = "El archivo {$this->fileName} ya se subió previamente.";
+      $this->errors[] = "El archivo {$this->fileName} ya se subió.";
       return false;
     else:
      return true;
@@ -91,7 +91,7 @@ class  Media {
       }
 
     if(file_exists($this->productPath."/".$this->fileName)){
-      $this->errors[] = "El archivo {$this->fileName} ya se subió previamente.";
+      $this->errors[] = "El archivo {$this->fileName} ya se subió.";
       return false;
     }
 
@@ -207,7 +207,7 @@ class  Media {
          unlink($this->productPath.'/'.$this->fileName);
          return true;
      } else {
-       $this->error[] = "Se ha producido un error en la eliminación de fotografías.";
+       $this->error[] = "Se ha eliminado la imagen.";
        return false;
      }
 
