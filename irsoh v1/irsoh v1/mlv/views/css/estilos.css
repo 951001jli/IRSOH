@@ -1,0 +1,59 @@
+/*estilos para todo el cuerpo toda la pagina*/
+body
+{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right,#24e4aa, #026751);
+}
+
+/*todo este estilo lo aplicamos a la calculadora*/
+.calculadora-grilla
+{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+/*este estilo es para toodos los botones de la calculadora 
+los espacios entre los botones, el color de los botones y
+el puntero cuando lo pasemos por los botones, el tipo de letra*/
+.calculadora-grilla > button
+{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(red, green, blue, alpha);
+}
+
+/*este estilo es para la pantalla de salida*/
+.output
+{
+    grid-column: 1 / -1;
+    background-color: rgba(246, 175, 32, 0.881);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/*dentro de esta clase creamos otra clase llamada display y
+le vamos a agregar estos estilos*/
+.output .display
+{
+    color: black;
+    font-size: 1.85rem;
+    text-align: right;
+}
+
+/*para el puntero cuando lo pasamos por los botones cambien de color */
+.calculadora-grilla > button:hover
+{
+    background-color: rgba(184, 248, 46, 0.881);
+}
